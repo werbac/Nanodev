@@ -1,0 +1,427 @@
+<%inherit file="cf2.html"/>     
+               
+               
+               
+<%block name="col2">
+    <style>  /*  DIVs  http://alistapart.com/article/practicalcss    */
+        .cnt-lst {  XXbackground: grey;  XXXfloat: right;   XXwidth: 100%;  XXmargin: 0 auto 0 0;  overflow: auto;} 
+        .cnt-lst div.fmat { float: left; padding-left: 10px;  margin: 10px; border: 0px solid #0ff; XXXbackground: green; width:250px; XXheight: 200px;}
+        .cnt-lst div.fmat p { text-align: center;}
+        .cnt-lst div.fmat img { display: block; margin: 0px auto; XXXwidth:240px; XXheight:200px; 
+                                width: 100%; height: auto;
+                              }
+    </style>      
+     <div class="cnt-lst">
+          <div class="fmat"><img src="img/tst.jpg" alt="image 1" /><br/>  <p>caption 6</p> </div>
+          <div class="fmat"><img src="img/tst.jpg" alt="image 1" /><br/>  <p>caption 1</p> </div>
+          <div class="fmat"><img src="/shared/img/tst.jpg" alt="image 1" /><br/>  <p>caption 1</p> </div>
+          <div class="fmat"><img src="img/tst.jpg" alt="image 1" /><br/>  <p>caption 1</p> </div>
+          <div class="fmat"><img src="img/tst.jpg" alt="image 1" /><br/>  <p>caption 1</p> </div>
+          <div class="fmat"><img src="/shared/img/tst.jpg" alt="image 1" /><br/>  <p>caption 1</p> </div>
+          <div class="fmat"><img src="img/tst.jpg" alt="image 1" /><br/>  <p>caption 1</p> </div>
+          <div class="fmat"><img src="img/tst.jpg" alt="image 1" /><br/>  <p>caption 1</p> </div>
+          <div class="fmat"><img src="/shared/img/tst.jpg" alt="image 1" /><br/>  <p>caption 1</p> </div>
+          <br/>       
+    </div>       
+</%block>
+
+<!-- *************************************************************************** -->
+
+<%block name="col1">     
+    <style>                       
+        .search-wrapper {width:290px; position: absolute;}                
+        .col1 {padding: 0px;}
+    </style> 
+               
+<!--      <div class="cnt-search"> -->
+        <div class="search-wrapper"> 
+           <style>
+               .anchor-menu { XXwidth: 200px; float: right;}
+               .anchor-menu ul li a {padding-top: 5px;padding-bottom: 5px;color: #454545;}
+               .anchor-menu a:-webkit-any-link {color: -webkit-link; text-decoration: underline; cursor: auto;}
+               .anchor-menu ul li {border-right: 3px solid #888; XXborder-right: 3px solid #2b3945;}
+               .anchor-menu ul li:hover {cursor: pointer; color:#555;}
+               .anchor-menu ul li.active a { XXpadding-left: 11px;}
+               .anchor-menu .nav > li > a {position: relative;display: block; padding: 5px 30px 5px 0px;  Xpadding: 5px 11px; text-decoration: none;}
+               .anchor-menu .nav > li {list-style-position:inside; border-top: 1px solid #F9F9F9;}
+               .anchor-menu .nav > li:last-child {list-style-position:inside; border-bottom: 1px solid #F9F9F9;}    
+               .anchor-menu .nav > li > a { font-weight: 600; font-size: 17.5px; line-height: 1.5;
+                                             xfont-family: "Helvetica Neue","Helvetica","Arial","sans-serif";
+                                             font-family: "Open Sans", "Droid Sans", sans-serif; color: #888;
+                                          }
+               .anchor-menu .nav {margin-bottom: 0; XXpadding-left: 50px; padding-right: 40px;list-style: none;}
+               .anchor-menu H {font-weight: 900; font-size: 16px; line-height: 1.9; font-family: "Open Sans", "Droid Sans", sans-serif; 
+                               color: #555; text-align: center; padding-left: 5px;
+                              } 
+           </style>
+           <div anchor-side-menu="" class="anchor-menu affix" ng-style="{ 'width' : width }" XXstyle="width: 262px;">
+              <H>SELECT A TRIP</H>
+               <ul class="nav visible-links" role="navigation">
+                  <li ng-repeat="item in visibleItems" ng-bind-html="item" class="ng-binding ng-scope"><a wb-target=".destinations" class="anchor-link">Destinations</a></li>
+                  <li ng-repeat="item in visibleItems" ng-bind-html="item" class="ng-binding ng-scope"><a wb-target=".activity" class="anchor-link">Activity</a></li>
+                  <li ng-repeat="item in visibleItems" ng-bind-html="item" class="ng-binding ng-scope"><a wb-target=".dates" class="anchor-link">Dates</a></li>
+                  <li ng-repeat="item in visibleItems" ng-bind-html="item" class="ng-binding ng-scope"><a wb-target=".price" class="anchor-link">Price</a></li>
+              </ul>
+           </div> 
+           
+                 
+        
+            
+<!--           
+    <div class="destinations" wb-offset-top="-80" >destinations</div>             
+    <div class="activity" wb-offset-top="-20" >activity</div>
+    <div class="dates" wb-offset-top="-50" >dates</div>
+    <div class="price" wb-offset-top="-50" >price</div>                   
+-->
+                                         
+        </div>
+<!--    </div> -->
+   
+    <style>
+        .destinations {}             
+        .activity {}
+        .dates {}
+        .price {}
+         /*  this :  http://www.jacklmoore.com/notes/jquery-modal-tutorial/  ---- delayed close : https://css-tricks.com/dropdown-menus-with-more-forgiving-mouse-movement-paths/ */
+        .vmenupanel {position: absolute; display:none; background: #FAFAFA; z-index: 1000; min-height: 500px; min-width: 500px;}
+    </style>   
+    <div class="destinations vmenupanel" wb-offset-top="-80" >destinations</div>             
+    <div class="activity vmenupanel" wb-offset-top="-20" >activity</div>
+    <div class="dates vmenupanel" wb-offset-top="-50" >dates</div>
+    <div class="price vmenupanel" wb-offset-top="-50" >price</div> 
+    
+     
+</%block>                                 
+                                                   
+<!--
+<style>
+    /*
+    .search-wrapper { /*width:185px; margin: 10px auto auto 0 ; * /
+                                        width:260px; margin: 10px auto auto 0 ; 
+                                          font-size: 1.250em; z-index: 12;
+                                          XXXbackground: red;
+                                          border-radius: 3px;
+                                          padding: 3px 0 3px 0;
+                                          border: 2px solid #eee;
+                                        }
+      .search-wrapper {background: #F9F9F9;color:#222;font-size:13px; ;line-height:1.6;padding:20PX 0 0 0;}                
+       .search-wrapper .headline{padding: 0 5px 0 5px ; display:block;margin:10px 0 20px 0;border-bottom:1px dotted #aaa}  
+       .search-wrapper .headline h2,.search-wrapper .headline h3,.search-wrapper .headline h4{margin:0 0 -2px 0;padding-bottom:5px;
+                       display:inline-block;border-bottom:2px solid #997555
+                      }
+       .search-wrapper h2{color:#555;font-size:18px;font-weight:200}    
+       .search-wrapper .link-list li{border-radius: 5px; padding: 0 5px 0 5px;  display:list-item;text-align:-webkit-match-parent; border-top:solid 1px #ddd} /*#ddd* /  
+       /*.search-wrapper .link-list li:hover{background: #EDEDED; text-decoration:none} * /
+       .search-wrapper .link-list .lihover:hover{background: #EDEDED; text-decoration:none} 
+       .search-wrapper .link-list li:first-child{border-top:none !important}
+       .search-wrapper .link-list li i{float:right;margin-top:10px}                             
+       .search-wrapper .link-list i{color:#555}           
+       .search-wrapper .link-list a{color:#555;font-size:13px;padding:6px 0px;display:inline-block;text-transform:uppercase}                      
+       .search-wrapper .link-list a{color:#555;text-decoration:none}
+       .search-wrapper .link-list a,.search-wrapper .link-list a:focus,
+       .search-wrapper .link-list a:hover,.search-wrapper .link-list a:active,.search-wrapper button,.search-wrapper button:hover{outline:0 !important}
+       .search-wrapper .link-list a:hover{text-decoration:none}  
+       .search-wrapper .link-list .liwrapper { border-bottom:2px solid #997555}
+    */
+</style>
+
+ <style>                       
+       .search-wrapper {XXposition: absolute; Xbackground: blue; xheight: 250px; width:290px;}                
+    .col1 {padding: 0px;}
+    
+    .XXXXatfixed  { position: fixed; top: 25px;  } /*transform: translateZ(0); -webkit-transform: translateZ(0); -webkit-backface-visibility: hidden; */
+    .XXXXatbotom  { position: absolute; bottom: 0px; }
+    .XXXXattop  { position: absolute; top: 0px;  }
+</style>     
+
+
+
+
+       
+       <style>
+           
+           .XXaffix { position: fixed; }
+           .ng-binding {} 
+           .ng-scope {}
+           .active {}
+           .anchor-link {}
+           .XXanchor-menu .nav {margin-bottom: 0; padding-left: 0;list-style: none;}
+           .XXanchor-menu ul, .anchor-menu ol {margin-top: 0;margin-bottom: 11px;}
+           .Xanchor-menu .nav > li {position: relative; display: block;}
+           .Xanchor-menu li {display: list-item;text-align: -webkit-match-parent;}
+           .XXXXXanchor-menu a {color: #00ab99;text-decoration: none;}
+           .XXanchor-menu .nav > li > a{font-family:"Open-sans","Arial","Helvetica Neue","Helvetica","sans-serif";font-size:16px;line-height:1.42857143;color:#454545;}
+           .Xanchor-menu ul li.active {border-left: 4px solid #2b3945;}
+           .Xanchor-menu ul li.active {border-right: 3px solid #2b3945;}
+           .XXXanchor-menu .nav > li { display: list-item; text-align: -webkit-match-parent;}
+           
+           
+           .anchor-menu { XXwidth: 200px; float: right;}
+           .anchor-menu ul li a {padding-top: 5px;padding-bottom: 5px;color: #454545;}
+           .anchor-menu a:-webkit-any-link {color: -webkit-link; text-decoration: underline; cursor: auto;}
+           
+           
+
+           .anchor-menu ul li {border-right: 3px solid #888; XXborder-right: 3px solid #2b3945;}
+           .anchor-menu ul li.active a { XXpadding-left: 11px;}
+           .anchor-menu .nav > li > a {position: relative;display: block; padding: 5px 30px 5px 0px;  Xpadding: 5px 11px; text-decoration: none;}
+           .anchor-menu .nav > li {list-style-position:inside; border-top: 1px solid #F9F9F9;}
+           .anchor-menu .nav > li:last-child {list-style-position:inside; border-bottom: 1px solid #F9F9F9;}
+
+           .anchor-menu .nav > li > a {  font-weight: 600;
+                                         font-size: 17.5px;
+                                         line-height: 1.5;
+                                         xfont-family: "Helvetica Neue","Helvetica","Arial","sans-serif";
+                                         font-family: "Open Sans", "Droid Sans", sans-serif;
+                                         color: #888;
+                                      }
+           .anchor-menu .nav {margin-bottom: 0; XXpadding-left: 50px; padding-right: 40px;list-style: none;}
+           .anchor-menu H {font-weight: 900; 
+                           font-size: 16px; 
+                           line-height: 1.9; font-family: "Open Sans", "Droid Sans", sans-serif; 
+                           color: #555;
+                           text-align: center;
+                           padding-left: 5px;
+                          } 
+           
+       </style>
+       
+-->    
+       
+
+ 
+               
+
+     <!--        
+        <div class="headline"><h2>Select Your Trip</h2></div>
+        <ul class="list-unstyled link-list">
+            <div class="liwrapper">    <li class="lihover"><a href="#">Region</a><i class="fa fa-angle-right"></i></li>   </div>
+            <div class="liwrapper">    <li class="lihover"><a href="#">Country</a><i class="fa fa-angle-right"></i></li>
+                                       <li>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-close"></i> <span>test</span></li>  
+            </div>
+            <div class="liwrapper">   <li class="lihover"><a href="#">Activity</a><i class="fa fa-angle-right"></i></li>  </div>
+            <div class="liwrapper">    <li class="lihover"><a href="#">Start Date</a><i class="fa fa-angle-right"></i></li>  </div>
+            <div class="liwrapper">    <li class="lihover"><a href="#">End Date</a><i class="fa fa-angle-right"></i></li>  </div>
+        </ul>
+         -->           
+              
+<!-- The modal 
+<style>
+    #overlay { position: fixed;  top: 0; left: 0; width: 100%; height: 100%; background: #000; opacity: 0.5; filter: alpha(opacity=50); }
+    #modal { position:absolute; background:url(tint20.png) 0 0 repeat; background:rgba(0,0,0,0.2); border-radius:14px; padding:8px; }
+    #content { border-radius:8px; background:#fff; padding:20px; }
+    #close { position:absolute; background:url(close.png) 0 0 no-repeat; width:24px; height:27px; display:block; text-indent:-9999px; top:-7px; right:-7px; }
+</style>
+<div id='overlay'></div>
+<div id='modal'>
+  <div id='content'>No JavaScript Yet!</div>
+  <a href='#' id='close'>close</a>
+</div>
+
+    #overlay { position:fixed;  top:0; left:0; width:100%; height:100%; background:#AAA; opacity:0.0; filter:alpha(opacity=50); }
+    #modal   { position:absolute; background:url(tint20.png) 0 0 repeat; background:rgba(0,0,0,0.2); border-radius:14px; padding:8px; }
+    #content { border-radius:8px; background:#fff; padding:20px; }
+    #close   { position:absolute; background:url(close.png) 0 0 no-repeat; width:24px; height:27px; display:block; text-indent:-9999px; top:-7px; right:-7px; }
+
+-->
+        
+              
+              
+              
+
+<!--       
+https://www.jonathanbriehl.com/2014/01/17/vertical-menu-for-bootstrap-3/
+
+<style>
+  .sidebar-nav .navbar .navbar-collapse { padding: 0; max-height: none; }
+  .sidebar-nav .navbar ul { float: none; }
+  .sidebar-nav .navbar ul:not { display: block; }
+  .sidebar-nav .navbar li { float: none; display: block; }
+  .sidebar-nav .navbar li a { padding-top: 12px padding-bottom: 12px; }
+</style>             
+<div class="sidebar-nav">
+      <div class="navbar navbar-default" role="navigation">
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="visible-xs navbar-brand">Sidebar menu</span>
+        </div>
+        
+        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Menu Item 1</a></li>
+            <li><a href="#">Menu Item 2</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Menu Item 4</a></li>
+            <li><a href="#">Reviews <span class="badge">1,118</span></a></li>
+          </ul>
+        </div>
+      </div>
+</div>                                                        
+
+
+
+<%block name="XXXXXXXXXXXXXXZZZcolX">
+    <div class="destinations">destinations</div>
+</%block>
+
+
+
+
+
+<%block name="ZZZZZZZZZZZZZZZZZZZZZxcol">
+           
+<style>
+            .cnt-search { Xwidth: 20%; float: left; XXbackground: red; XXposition: absolute; height: 600px !important;}
+            .cnt-search .search-wrapper { /*width:185px; margin: 10px auto auto 0 ; */
+                                        width:260px; margin: 10px auto auto 0 ; 
+                                          font-size: 1.250em; z-index: 12;
+                                          XXXbackground: red;
+                                          border-radius: 3px;
+                                          padding: 3px 0 3px 0;
+                                          border: 2px solid #eee;
+                                        }
+            .ZZZZZcnt-search .srch-fmat {  margin: 5px 5px 5px 5px; border: 1px solid #e5e5e5;  /*height: 1px */    /*[trip-finder~="dropdown"] {*/
+                                      position: relative;      /*margin: 0;    margin-top: 10px; */
+                                      padding: 0 10px 0 ;
+                                      XXfont: 300 16px/40px "Droid Sans", sans-serif;
+                                      color: #333;
+                                      border: solid 1px #D8D8D8;
+                                      border-radius: 3px;
+                                      background: #F0F0F0;
+                                      -webkit-user-select: none;
+                                      cursor: pointer;
+                                      white-space: nowrap;
+                                      overflow: visible;              
+                                   }
+            .ZZZZcnt-search .srch-fmat  p {margin: 6px auto 6px auto;}
+    
+    
+            .ZZZZZcnt-search .wrapped-end {}
+           .equal-height-column {height: auto !important;} 
+</style>
+        
+        
+       
+
+              
+<style>                       
+       .search-wrapper {background: #F9F9F9;color:#222;font-size:13px; ;line-height:1.6;padding:20PX 0 0 0;}                
+       .search-wrapper .headline{padding: 0 5px 0 5px ; display:block;margin:10px 0 20px 0;border-bottom:1px dotted #aaa}  
+       .search-wrapper .headline h2,.search-wrapper .headline h3,.search-wrapper .headline h4{margin:0 0 -2px 0;padding-bottom:5px;
+                       display:inline-block;border-bottom:2px solid #997555
+                      }
+       .search-wrapper h2{color:#555;font-size:18px;font-weight:200}    
+       .search-wrapper .link-list li{border-radius: 5px; padding: 0 5px 0 5px;  display:list-item;text-align:-webkit-match-parent; border-top:solid 1px #ddd} /*#ddd*/  
+       /*.search-wrapper .link-list li:hover{background: #EDEDED; text-decoration:none} */
+       .search-wrapper .link-list .lihover:hover{background: #EDEDED; text-decoration:none} 
+       .search-wrapper .link-list li:first-child{border-top:none !important}
+       .search-wrapper .link-list li i{float:right;margin-top:10px}                             
+       .search-wrapper .link-list i{color:#555}           
+       .search-wrapper .link-list a{color:#555;font-size:13px;padding:6px 0px;display:inline-block;text-transform:uppercase}                      
+       .search-wrapper .link-list a{color:#555;text-decoration:none}
+       .search-wrapper .link-list a,.search-wrapper .link-list a:focus,
+       .search-wrapper .link-list a:hover,.search-wrapper .link-list a:active,.search-wrapper button,.search-wrapper button:hover{outline:0 !important}
+       .search-wrapper .link-list a:hover{text-decoration:none}  
+       .search-wrapper .link-list .liwrapper { border-bottom:2px solid #997555}
+       .cnt-search .wrapped-fixed  { position: fixed; top: 25px; XXXleft:10px ; XXXwidth: 140px;  
+                                     transform: translateZ(0);
+                                     -webkit-transform: translateZ(0);
+                                     -webkit-backface-visibility: hidden;
+                                   }
+       .ZZZZZcnt-search .wrapped-low  { position:relative; bottom: 100px; XXXleft:10px ; XXXwidth: 140px;  
+                                        transform: translateZ(0);
+                                        -webkit-transform: translateZ(0);
+                                        -webkit-backface-visibility: hidden;
+                                      }
+       .cnt-search-low   { position: absolute; XXbottom: -220px; Xfloat left; XXleft:10px ; XXXwidth: 140px;  
+                          /* transform: translateZ(0);
+                           -webkit-transform: translateZ(0);
+                           -webkit-backface-visibility: hidden;
+                          */
+                         }
+</style>
+               
+               
+<div class="cnt-search">  
+   <! - - <div class="search-wrapper">                  
+        <div class="headline"><h2>Select Your Trip</h2></div>
+        <ul class="list-unstyled link-list">
+            <div class="liwrapper">    <li class="lihover"><a href="#">Region</a><i class="fa fa-angle-right"></i></li>   </div>
+            <div class="liwrapper">    <li class="lihover"><a href="#">Country</a><i class="fa fa-angle-right"></i></li>
+                                       <li>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-close"></i> <span>test</span></li>  
+            </div>
+            <div class="liwrapper">   <li class="lihover"><a href="#">Activity</a><i class="fa fa-angle-right"></i></li>  </div>
+            <div class="liwrapper">    <li class="lihover"><a href="#">Start Date</a><i class="fa fa-angle-right"></i></li>  </div>
+            <div class="liwrapper">    <li class="lihover"><a href="#">End Date</a><i class="fa fa-angle-right"></i></li>  </div>
+        </ul> 
+    </div>
+    -  -  >
+    &nbsp;
+</div>
+               
+
+               
+</%block>     
+
+
+
+
+<! - - 
+<style>
+            .XXXcnt-lst {  background: green;  XXXfloat: right;   width: 100%;  XXmargin: 0 auto 0 0;  overflow: auto;}  /*width: 80%; restricts to only 2 pics per line*/
+            .XXXcnt-lst ul { list-style-type: none;}
+            .XXXXXXXXXXcnt-lst li {  width:30px; XXXXheight:20px;   float: left;  margin: 4px;  border: 0px solid #eee;
+                          -webkit-transition: box-shadow 0.5s ease; -moz-transition: box-shadow 0.5s ease;
+                           -o-transition: box-shadow 0.5s ease;  -ms-transition: box-shadow 0.5s ease;
+                           transition: box-shadow 0.5s ease;
+                        }
+            
+            .XXXcnt-lst .list-inline>li{display:inline-block;padding-right:5px;padding-left:5px}
+            .XXXcnt-lst .footer-socials{margin-top:12px;text-align:right}
+            .XXXcnt-lst .footer-socials li a{color:#777;font-size:16px}
+            
+            
+            
+            .XXXcnt-lst ul { list-style-type: none;}
+
+            .XXXcnt-lst li img { float: left; margin: 10px; border: 5px solid #0ff;
+                              -webkit-transition: box-shadow 0.5s ease;
+                              -moz-transition: box-shadow 0.5s ease;
+                              -o-transition: box-shadow 0.5s ease;
+                              -ms-transition: box-shadow 0.5s ease;
+                              transition: box-shadow 0.5s ease;
+                            }
+
+            .XXXXXXcnt-lst li img:hover { -webkit-box-shadow: 0px 0px 7px rgba(255,255,255,0.9); box-shadow: 0px 0px 7px rgba(255,255,255,0.9); }
+            
+            /*  DIVs  http://alistapart.com/article/practicalcss    */
+            .cnt-lst {  XXbackground: grey;  XXXfloat: right;   XXwidth: 100%;  XXmargin: 0 auto 0 0;  overflow: auto;} 
+            .cnt-lst div.fmat { float: left; padding-left: 10px;  margin: 10px; border: 0px solid #0ff; XXXbackground: green; width:250px; XXheight: 200px;}
+            .cnt-lst div.fmat p { text-align: center;}
+            .cnt-lst div.fmat img { display: block; margin: 0px auto; XXXwidth:240px; XXheight:200px; 
+                                    width: 100%; height: auto;
+                                  }
+</style>
+- - >
+
+-->              
+              
+               
+

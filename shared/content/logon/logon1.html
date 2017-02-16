@@ -1,0 +1,213 @@
+<%inherit file="../content_f1.html"/>
+            
+ 
+           
+           
+           
+<%block name="content_left"> 
+    <!--   <div class="backstretch" style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 793px; width: 782px; z-index: -999998; position: absolute;">
+    -->
+    <div style="left: 0px; top: 0px; overflow: hidden; margin: 0px 0 0 0; padding: 0px;">
+<!--       <img src="img/img11.jpg" class="deleteable" style="position: absolute; margin: 0px; padding: 0px; border: none; width: 1189.13px; height: 793px; max-width: none; z-index: -999999; left: -203.564px; top: 0px;">
+       <img src="img/img5.jpg" style="position: absolute; margin: 0px; padding: 0px; border: none; width: 1208.38px; height: 793px; max-width: none; z-index: -999999; opacity: 0.0964168; left: -213.19px; top: 0px;">
+       -->
+       <!--<img src="img/img5.jpg" style="margin: 0px; padding: 0px; border: none; XXwidth: 1208.38px; XXheight: 793px; XXmax-width: none; z-index: -999999; opacity: 0.0964168;"> -->
+       <img src="/img/adventure.jpg" style="height:480px; XXwidth:690px;" class="img-fluid">
+       </div>           
+</%block>           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+            
+<%block name="content_right">
+
+            
+<style>
+.nav-tabs .nav-item { margin-bottom: 1px;}
+    
+.tab-v1 .nav-tabs > .active > a,
+.tab-v1 .nav-tabs > .active > a:hover,
+.tab-v1 .nav-tabs > .active > a:focus { color: #fff; border: none; background: #3498db ; } /* #72c02c */
+.tab-v1 .nav-tabs > li > a {border: none; font-size: 16px; color: #555; }
+    
+.tab-v1 .nav-tabs > li > a:hover {color: #fff; background: #72c02c;} /*#72c02c  #3498db*/
+.tab-v1 .nav-tabs > li a {text-decoration: none;}
+.tab-v1 .nav-tabs > li .active, .tab-v1 .nav-tabs > li .active:hover, .tab-v1 .nav-tabs > li .active:focus { color: #fff; border: none; background: #72c02c ; }  /*#3498db */
+
+.tab-v1 .nav-tabs { border-bottom: solid 2px #72c02c ; margin-top: 20px;}  /* #3498db */
+    
+
+    
+</style>    
+    
+       
+                    <div class="tab-v1">
+                        <ul class="nav nav-tabs margin-bottom-30">
+                           <li class="nav-item"><a class="active" href="#login" data-toggle="tab">Login</a></li>
+                           <li class="nav-item"><a href="#newacc" data-toggle="tab">Create New Account</a></li>
+                           <li class="nav-item"><a href="#forgotpwd" data-toggle="tab">Forgot Password</a></li>
+
+                        </ul>
+          
+						<div class="tab-content">
+							<div class="tab-pane fade in active" id="login">
+			
+			<!--	<h2 class="margin-bottom-30">LOGIN TO YOUR ACCOUNT</h2>  -->
+				<form action="javascript:void(0);" onsubmit="return false;">
+					<div class="login-block">
+						<div class="input-group margin-bottom-20">
+							<span class="input-group-addon rounded-left"><i class="fa fa-envelope color-green XXXcolor-green"></i></span>
+							<input type="text" name="username" class="form-control rounded-right" placeholder="Email">
+						</div>
+
+						<div class="input-group margin-bottom-20">
+							<span class="input-group-addon rounded-left"><i class="fa fa-lock color-green XXXcolor-green"></i></span>
+							<input type="password" name="password" class="form-control rounded-right" placeholder="Password">
+						</div>
+
+						<div class="checkbox">
+							<ul class="color-dark-green XXXXcolor-dark-green list-inline">
+								<li>
+									<label>
+										<input type="checkbox"> Remember me
+									</label>
+								</li>
+
+								<!--<li class="pull-right">
+									<a href="lost_password.html">Forgot password?</a>
+								</li>
+								-->
+							</ul>
+						</div>
+
+						<div class="row margin-bottom-50">
+							<div class="col-md-12">
+								<button type="submit" onsubmit="return false;" class="btn-u btn-u-green btn-block rounded">Sign In</button>
+							</div>
+						</div>
+
+						<div class="social-login text-center">
+							<div class="or rounded-x">Or</div>
+							<ul class="list-inline margin-bottom-20">
+								<li>
+									<button class="btn rounded btn-lg btn-facebook">
+										<i class="fa fa-facebook"></i> Facebook Sign in
+									</button>
+								</li>
+								<li>
+									<button class="btn rounded btn-lg btn-twitter">
+										<i class="fa fa-twitter"></i> Twitter Sign in
+									</button>
+								</li>
+							</ul>
+				<!--			<p>Don't have an account? <a href="register2.html">Create New</a></p>  -->
+						</div>
+					</div>
+				</form> 
+							</div>
+							
+							
+							
+							
+							
+							
+							<div class="tab-pane fade in" id="newacc">
+<!--  <h2 class="margin-bottom-30" >CREATE NEW ACCOUNT</h2>  -->
+				<form action="javascript:void(0);" onsubmit="return false;">
+					<div class="login-block">
+						<div class="input-group margin-bottom-20">
+							<span class="input-group-addon rounded-left"><i class="fa fa-user color-green"></i></span>
+							<input type="text" class="form-control rounded-right" placeholder="First Name">
+						</div>
+						<div class="input-group margin-bottom-20">
+							<span class="input-group-addon rounded-left"><i class="fa fa-user color-green"></i></span>
+							<input type="text" class="form-control rounded-right" placeholder="Last Name">
+						</div>
+						
+						<div class="input-group margin-bottom-20">
+							<span class="input-group-addon rounded-left"><i class="fa fa-envelope color-green"></i></span>
+							<input type="text" class="form-control rounded-right" placeholder="Email">
+						</div>
+
+						<div class="input-group margin-bottom-20">
+							<span class="input-group-addon rounded-left"><i class="fa fa-lock color-green"></i></span>
+							<input type="password" class="form-control rounded-right" placeholder="Password">
+						</div>
+
+                    
+                        <div class="row margin-bottom-30">
+						    <div class="col-lg-12 checkbox">
+								<label>
+									<input type="checkbox">
+									I agree to the <a href="page_terms.html" class="color-green">Terms and Conditions</a>
+								</label>
+				            </div>
+                        </div>
+                        
+						<div class="row margin-bottom-30">
+							<div class="col-md-12">
+								<button type="submit" class="btn-u btn-u-green btn-block rounded">Create New</button>
+							</div>
+						</div>
+
+	
+					</div>
+				</form>   
+							</div>
+
+      
+                        
+                                          
+                                                            
+                                                                              
+                                                                                                
+               	
+               			
+							
+							
+							<div class="tab-pane fade in" id="forgotpwd">
+			<!--	<h2 class="margin-bottom-30" style="padding-left:0px;" >LOST PASSWORD</h2>  -->
+				<form action="#">
+					<div class="login-block">
+						<div class="input-group margin-bottom-20">
+							<span class="input-group-addon rounded-left"><i class="fa fa-envelope color-green XXXcolor-green"></i></span>
+							<input type="text" class="form-control rounded-right" placeholder="Email Address">
+						</div>
+
+					
+			
+
+						<div class="row margin-bottom-30" stye="margin-bottom:30px;">
+							<div class="col-md-12">
+								<button type="submit" class="btn-u btn-u-green XXXbtn-u-green btn-block rounded">RESET PASSWORD</button>
+							</div>
+						</div>
+        
+			
+					</div>
+				</form> 
+							</div>
+                                      
+                                                                                                                                   
+                                                                                                                                                                                                                                                             
+                                                                                                                                    
+                                                                                                                                                                        
+                        
+							
+				
+							
+							
+						</div>
+					</div>
+					     
+       
+</%block>   

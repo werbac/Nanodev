@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>   <!-- Required meta tags always come first -->
+      
+<%block name="html_head"> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta  name="copyright" content="Adventure Travel is a trademark of handmadeholidays"/>
+    <meta  name="description" content="Adventure Travel - kayak, kite boarding, snow mobiling, rock climbing, trek" />
+    <meta  name="keywords" content="" />
+    <meta  name="" content="Adventure Travel, kayak, kite boarding, snow mobiling, rock climbing, trekking, multisport adventures, sup" />
+    <meta  name="robots" content="index,follow" />
+    <meta  name="title" content="Adventure Travel" />
+
+    <title>HandMadeHolidays - Adventure Travel</title>    
+    <link rel="stylesheet" href="/shared/css/bootstrap.min.css"> 
+<!--    <link rel="stylesheet" href="/shared/css/bootstrap-flex.min.css"> -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+    -->
+    
+    <style> /* RESPONSIVE */
+        @media (max-width: 74.9em)  /* Large devices (desktops, less than 75em) */
+            { 
+            }
+        @media (max-width: 61.9em) /* Medium devices (tablets, less than 62em) */
+            { 
+            }
+        @media (max-width: 47.9em) /* Small devices (landscape phones, less than 48em) */
+            {  
+            }
+        @media (max-width: 33.9em) /* Extra small devices (portrait phones, less than 34em) */
+            {  
+            }
+        /*  OR MIN */
+        @media (min-width: 544px)
+            { .container {max-width: 100%;}  /*576px;*/
+            }
+        @media (min-width: 768px)
+            { .container {max-width: 100%;}     /*720px*/ 
+            }
+       @media (min-width: 992px)
+            { .container {max-width: 100%;}  /*940px*/
+            }
+        @media (min-width: 1200px)
+            {  .container {max-width: 100%;}  /*1200px;*/
+            }
+   
+        .container {padding: 0 0 0 0}        
+        .page-width {min-height: 1rem; max-width: 1150px;}
+    </style>  
+    
+     
+    
+    
+    <link rel="stylesheet" href="/shared/css/font-awesome.min.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/shared/css/app.css">
+    
+    
+    <!-- Custom -->
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans" rel="stylesheet">
+    <!-- -->
+    <!--
+    <link href="css/droidsans.css" rel="stylesheet">
+    <link href="css/opensans.css" rel="stylesheet">
+    -->
+    
+    <style>       
+        body { font: 400 15px/1.85 "Open Sans", "Droid Sans", sans-serif; background: #FFFFFF url("img/XXXXXX.png"); background: #FFFFFF }
+        body { font-size: 13px; line-height: 1.6; font-family: "Open Sans",Arial,Helvetica,Sans-Serif; }
+        body {  color: #333; font-size: 13px; line-height: 1.6;}
+        * { border-radius: 0;}
+        /*  GLOBAL */
+        a, a:focus, a:hover, a:active, button, button:hover { outline: 0 !important; } 
+        a {text-decoration: none;}    
+    </style>
+
+ </%block>
+     
+     
+<%block name="app_css"/>       
+      
+      
+</head>
+
+<body>
+        
+ 
+<div class="headwrappper" style="position: relative; border-bottom: solid 2px #eee; XXbackground:red;"> 
+    <%block name="header"/>
+</div>
+        
+        
+<!-- Banner/Carosal Start-->
+<div class="bannerwrappper">
+    <div class="container">
+        <%block name="banner"/>                       
+    </div>
+</div> 
+<!-- Banner end-->
+        
+
+<div class="contentwrapper">
+    <div class="container page-width">
+        <%block name="content"/>   
+    </div>
+</div> 
+     
+
+<div class="footerwrapper">    <!-- http://codepen.io/secondfret/pen/JBsKl -->
+    <div class="container page-width pgFooter">
+        <%block name="footer"/>
+    </div>  
+</div>
+ 
+     
+<!-- copyright --> 
+<div class="copyright">
+    <div class="container page-width pgCopyRight">
+        <div class="row">  
+<%block name="copyright">
+  <style>
+    .copyright  {font-size:13px;line-height:1.6;background:#fff;border-top:none;padding:10px 0 5px}
+    .copyright p{color:#888;margin-top:14px}
+    .copyright .footer-socials{margin-top:12px;text-align:right}
+    .copyright .footer-socials li a{color:#777;font-size:16px}
+    .copyright a{margin:0 2px;color:#997555;text-decoration:none}
+    .copyright a,.copyright a:focus,.copyright a:hover,.copyright a:active{outline:0 !important}
+    .copyright a:hover{text-decoration:underline}
+    .copyright .list-inline>li{display:inline-block;padding-right:5px;padding-left:5px}
+      .copyright .row {text-align: center}
+</style>
+     
+
+        
+                        <p>
+                            2015 (C) All Rights Reserved.
+                           <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                        </p>
+                    
+       
+</%block>
+        </div>
+    </div>
+</div>
+<!-- copyright - end --> 
+  
+  
+     
+     
+          
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="/shared/js/jquery-2.1.4.min.js"></script>
+    <script src="/shared/js/bootstrap.min.js"></script>
+    <script src="/shared/js/jquery-ui.min.js"></script>
+    <!-- -->
+   <!-- - -> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
+    <!-- -->  
+
+
+
+<%block name="EOP_scripts"/>
+    
+
+ </body>
+</html>
+
+

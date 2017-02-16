@@ -1,0 +1,150 @@
+
+
+     <style> /* HEADER */
+         .headwrappper { background: url(shared/img/header/headerbg-v1.gif) repeat-x; width: 100%;  }
+         .headwrappper > .container { Xdisplay: table; XXXmargin-bottom: -40px; }
+         .headwrappper .logo img { z-index: 1; margin: 20px 0; position: relative; }
+         .headwrappper .logo { float: left; height: 100%; min-height: 40px; min-width: 100px; display: table-cell; vertical-align: middle; }
+         .headwrappper .head-cont {position: relative; float right; height:100%}
+         .headwrappper .topbar {position: relative; top: 0px;}
+         .headwrappper .pgNav {Xfloat: right; XXdisplay: inline}
+         
+         /* top bar */
+         .headwrappper { z-index: 99; XXXbackground: #fff; position: relative; /* border-bottom: solid 2px #eee; */ }
+         .headwrappper .topbar { z-index: 200; padding: 8px 0; position: relative;}
+         .headwrappper .topbar {color: #7c8082;font-size: 12.5px;}
+         .headwrappper .topbar ul.loginbar { margin: 0; padding: 0 8px 0 10px; 
+                              border-top: solid 3px #f2f1ec; 
+                              border-left: solid 1px #ddd; 
+                              border-right: solid 1px #ddd;
+                              border-bottom: solid 1px #ddd;
+                              background: #f2f1ec;
+                              z-index: 201;
+                            }
+         .headwrappper .topbar ul.loginbar li.topbar-devider { top: -1px; padding: 0; font-size: 8px;position:relative;margin: 0 10px 0 7px;
+                                                font-family: "Droid Sans", Tahoma;
+                                                border-right: solid 1px #bbb;  
+                                              }
+         .headwrappper .topbar ul.loginbar > li > a, .headwrappper .topbar ul.loginbar > li > a:hover {  color: inherit;font-size: inherit; }         
+         .headwrappper .topbar ul.loginbar > li {display: inline; list-style: none; position: relative; padding-bottom: 0px;}
+        /*  top bar end */  
+     </style>
+
+       
+            
+         
+         
+    <!-- test --> 
+    <style>     
+          /* nav */ 
+         .headwrappper .pgNav {XXXpadding:0 0 0 0 ; XXpadding: 8px 0; XXXfloat: right; XXXvertical-align: bottom;  z-index: 0; XXposition: relative; XXright: 0px;  XXbottom: 0px}
+         .headwrappper .pgNav {color: #7c8082;font-size: 15px; font-family: "Droid Sans", Tahoma;}
+         .headwrappper .pgNav ul { margin: 0; XXXpadding: 0 3px 0 3px;  }
+         .headwrappper .pgNav ul > li > a, .headwrappper .topbar ul.loginbar > li > a:hover {  color: inherit;font-size: inherit;}         
+         .headwrappper .pgNav ul > li { XXXbackground: red  ; margin: 0 2px 0 3px; display: inline; list-style: none; position: relative; padding: 0 5px 0 5px;}
+         .headwrappper .pgNav ul li.topbar-devider { top: -1px; padding: 0; font-size: 13px;position:relative;margin: 0 0 0 0;/*0 9px 0 5px; */
+                                                /* font-family: Tahoma;  */
+                                                font-family: sans-serif;
+                                                border-right: solid 1px #efefef;/* #cfcfcf; */  
+                                              }
+        /*.header .navbar-nav > .active > a { color: #72c02c;} */
+         .headwrappper .pgNav  li  a:hover, .headwrappper .pgNav .active a {color:#72c02c;  text-decoration:none;  XXbottom: -2px; XXposition: relative; border-bottom: solid 3px #72c02c; }
+         .XXXXXXXXXXXXXXXXXXXXXxheadwrappper .pgNav  li  a:hover,
+         .headwrappper .pgNav  .active  a { color: #72c02c; }
+         /* nav end */
+    </style> 
+        
+       
+        <script>
+            function toggleLogin()
+                {
+                    alert('XQTlogin')
+                }
+        </script>   
+           
+           
+
+            <div class="container page-width" style="max-height:35px; XXheight:20; XXbackground:black;">
+                <div style="position:relative;bottom:-5px; XXbackground:grey;"><a class="logo" href="/"> <img src="img/logox.png" style="height:70px;top:-14px" alt="Logo"> </a>
+                </div>
+                <div class="top" style="XXbackground:purple;"> 
+                       <div class="topbar">
+	                       <ul id="loginbar" class="loginbar pull-right" style="font-family: 'Open Sans', sans-serif;">
+                           <li><a href="page_myacc.html">HELP</a></li>
+                           <li class="topbar-devider"></li>
+                           
+<%doc>
+                           % if ('user' in locals() and user['email']!='default@default.com'):
+                               <li><a href="page_faq.html">ACC : ${user['email']} </a></li>
+		                       <li class="topbar-devider"></li>
+                           % else:
+                               <li><a href="page_faq.html">NADA : ${user['email']} </a></li>
+		                       <li class="topbar-devider"></li>
+                           % endif
+</%doc>
+                           <!--
+		                   <li><a href="page_faq.html">MY ACCOUNT</a></li>
+		                   <li class="topbar-devider"></li>
+		                   <li><a id="login_ref" onclick="toggleLogin();" XXXXhref="page_login.html">LOGIN</a></li>  
+		                   &nbsp;<i class="fa fa-lock"></i>
+                           -->     
+	                       </ul>
+                       </div>
+                </div>
+            </div>
+
+
+<!-- 'default@default.com' -->
+<script> var user = "${user['email']}" //alert("user : " + user)
+o = document.getElementById("loginbar")
+var nahtml = "<li><a href='page_faq.html'>MY ACCOUNT</a></li> <li class='topbar-devider'></li><li><a id='login_ref' XXXXXXonclick='toggleLogin();' href='/logon.html'>LOGIN</a></li>  &nbsp;<i class='fa fa-lock'></i>"
+//document.getElementById("demo").innerHTML = "Paragraph changed!";
+if(user !== undefined && user !== null)
+    {
+         if (user == 'default@default.com') 
+             { o.innerHTML = o.innerHTML + nahtml }
+         else
+             {  //alert('OK : '+user)  
+                var uhtml = "<li><a href='page_faq.html'> PROFILE : "+user+"</a></li> <li class='topbar-devider'></li><li><a id='login_ref' XXXonclick='toggleLogin();' href='/shared/logout.xqt'>LOGOUT</a></li>  &nbsp;"
+                o.innerHTML = o.innerHTML + uhtml
+             }
+    }
+else
+    {  alert("Users Variable Undefined"); }
+
+
+//document.getElementById("loginbar").innerHTML = "Paragraph changed!";
+    
+//var para = document.createElement("li");
+//var node = document.createTextNode("This is new.");
+//para.appendChild(node);
+//var element = document.getElementById("loginbar");
+//element.appendChild(para);    
+    
+</script>
+
+                         
+ 
+                                  
+                                             
+                                                                   
+            
+            <div style="max-height:50px; XXbackground:blue;">
+                    <div class="container page-width pgNav">
+	                    <ul class="nav navbar-nav" style="float:right; position:relative; bottom:-27px; font-family: 'Open Sans', sans-serif;">
+		                    <li class="active"><a href="/" class="" >HOME</a></li>
+		                    <li class="topbar-devider"></li>  
+		                    <li class=""><a href="/trips.html" class="" >TRIPS &nbsp;<i style="font-size: 1.1em" class="fa fa-search"></i></a></li>
+		                    <li class="topbar-devider"></li>
+		                    <li class=""><a href="javascript:void(0);" class="" >WHERE IN THE WORLD IS</a></li> 
+		                    <li class="topbar-devider"></li>
+		                    <li class=""><a href="javascript:void(0);" class="" >ARTICLES</a></li>
+		                    <li class="topbar-devider"></li>
+		                    <li class=""> <a href="javascript:void(0);" class="" >ABOUT US</a></li>
+		                    <li class="topbar-devider"></li>
+		                    <li class=""> <a href="javascript:void(0);" class="" >FAQs</a></li>
+		                   </li>
+	                    </ul>
+                    </div>
+            </div>
+                        

@@ -1,0 +1,164 @@
+<%inherit file="cf2.html"/>
+
+
+
+
+
+
+
+
+<%block name="xcol">
+
+            
+ 
+           
+<style>
+            .cnt-search { Xwidth: 20%; float: left; background: red; XXposition: absolute; height: 600px !important;}
+            .cnt-search .search-wrapper { /*width:185px; margin: 10px auto auto 0 ; */
+                                        width:260px; margin: 10px auto auto 0 ; 
+                                          font-size: 1.250em; z-index: 12;
+                                          XXXbackground: red;
+                                          border-radius: 3px;
+                                          padding: 3px 0 3px 0;
+                                          border: 2px solid #eee;
+                                        }
+            .ZZZZZcnt-search .srch-fmat {  margin: 5px 5px 5px 5px; border: 1px solid #e5e5e5;  /*height: 1px */    /*[trip-finder~="dropdown"] {*/
+                                      position: relative;      /*margin: 0;    margin-top: 10px; */
+                                      padding: 0 10px 0 ;
+                                      XXfont: 300 16px/40px "Droid Sans", sans-serif;
+                                      color: #333;
+                                      border: solid 1px #D8D8D8;
+                                      border-radius: 3px;
+                                      background: #F0F0F0;
+                                      -webkit-user-select: none;
+                                      cursor: pointer;
+                                      white-space: nowrap;
+                                      overflow: visible;              
+                                   }
+            .ZZZZcnt-search .srch-fmat  p {margin: 6px auto 6px auto;}
+    
+    
+            .ZZZZZcnt-search .wrapped-end {}
+           .equal-height-column {height: auto !important;} 
+</style>
+        
+        
+       
+
+              
+<style>                       
+       .search-wrapper {background: #F9F9F9;color:#222;font-size:13px; ;line-height:1.6;padding:20PX 0 0 0;}                
+       .search-wrapper .headline{padding: 0 5px 0 5px ; display:block;margin:10px 0 20px 0;border-bottom:1px dotted #aaa}  
+       .search-wrapper .headline h2,.search-wrapper .headline h3,.search-wrapper .headline h4{margin:0 0 -2px 0;padding-bottom:5px;
+                       display:inline-block;border-bottom:2px solid #997555
+                      }
+       .search-wrapper h2{color:#555;font-size:18px;font-weight:200}    
+       .search-wrapper .link-list li{border-radius: 5px; padding: 0 5px 0 5px;  display:list-item;text-align:-webkit-match-parent; border-top:solid 1px #ddd} /*#ddd*/  
+       /*.search-wrapper .link-list li:hover{background: #EDEDED; text-decoration:none} */
+       .search-wrapper .link-list .lihover:hover{background: #EDEDED; text-decoration:none} 
+       .search-wrapper .link-list li:first-child{border-top:none !important}
+       .search-wrapper .link-list li i{float:right;margin-top:10px}                             
+       .search-wrapper .link-list i{color:#555}           
+       .search-wrapper .link-list a{color:#555;font-size:13px;padding:6px 0px;display:inline-block;text-transform:uppercase}                      
+       .search-wrapper .link-list a{color:#555;text-decoration:none}
+       .search-wrapper .link-list a,.search-wrapper .link-list a:focus,
+       .search-wrapper .link-list a:hover,.search-wrapper .link-list a:active,.search-wrapper button,.search-wrapper button:hover{outline:0 !important}
+       .search-wrapper .link-list a:hover{text-decoration:none}  
+       .search-wrapper .link-list .liwrapper { border-bottom:2px solid #997555}
+       .cnt-search .wrapped-fixed  { position: fixed; top: 25px; XXXleft:10px ; XXXwidth: 140px;  
+                                     transform: translateZ(0);
+                                     -webkit-transform: translateZ(0);
+                                     -webkit-backface-visibility: hidden;
+                                   }
+       .ZZZZZcnt-search .wrapped-low  { position:relative; bottom: 100px; XXXleft:10px ; XXXwidth: 140px;  
+                                        transform: translateZ(0);
+                                        -webkit-transform: translateZ(0);
+                                        -webkit-backface-visibility: hidden;
+                                      }
+       .cnt-search-low   { position: absolute; XXbottom: -220px; Xfloat left; XXleft:10px ; XXXwidth: 140px;  
+                          /* transform: translateZ(0);
+                           -webkit-transform: translateZ(0);
+                           -webkit-backface-visibility: hidden;
+                          */
+                         }
+</style>
+               
+               
+<div class="cnt-search">  
+   <!-- <div class="search-wrapper">                  
+        <div class="headline"><h2>Select Your Trip</h2></div>
+        <ul class="list-unstyled link-list">
+            <div class="liwrapper">    <li class="lihover"><a href="#">Region</a><i class="fa fa-angle-right"></i></li>   </div>
+            <div class="liwrapper">    <li class="lihover"><a href="#">Country</a><i class="fa fa-angle-right"></i></li>
+                                       <li>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-close"></i> <span>test</span></li>  
+            </div>
+            <div class="liwrapper">   <li class="lihover"><a href="#">Activity</a><i class="fa fa-angle-right"></i></li>  </div>
+            <div class="liwrapper">    <li class="lihover"><a href="#">Start Date</a><i class="fa fa-angle-right"></i></li>  </div>
+            <div class="liwrapper">    <li class="lihover"><a href="#">End Date</a><i class="fa fa-angle-right"></i></li>  </div>
+        </ul> 
+    </div>
+    -->
+    &nbsp;
+</div>
+               
+
+               
+</%block>          
+               
+               
+               
+<%block name="col2">
+     
+
+<style>
+            .XXXcnt-lst {  background: green;  XXXfloat: right;   width: 100%;  XXmargin: 0 auto 0 0;  overflow: auto;}  /*width: 80%; restricts to only 2 pics per line*/
+            .XXXcnt-lst ul { list-style-type: none;}
+            .XXXXXXXXXXcnt-lst li {  width:30px; XXXXheight:20px;   float: left;  margin: 4px;  border: 0px solid #eee;
+                          -webkit-transition: box-shadow 0.5s ease; -moz-transition: box-shadow 0.5s ease;
+                           -o-transition: box-shadow 0.5s ease;  -ms-transition: box-shadow 0.5s ease;
+                           transition: box-shadow 0.5s ease;
+                        }
+            
+            .XXXcnt-lst .list-inline>li{display:inline-block;padding-right:5px;padding-left:5px}
+            .XXXcnt-lst .footer-socials{margin-top:12px;text-align:right}
+            .XXXcnt-lst .footer-socials li a{color:#777;font-size:16px}
+            
+            
+            
+            .XXXcnt-lst ul { list-style-type: none;}
+
+            .XXXcnt-lst li img { float: left; margin: 10px; border: 5px solid #0ff;
+                              -webkit-transition: box-shadow 0.5s ease;
+                              -moz-transition: box-shadow 0.5s ease;
+                              -o-transition: box-shadow 0.5s ease;
+                              -ms-transition: box-shadow 0.5s ease;
+                              transition: box-shadow 0.5s ease;
+                            }
+
+            .XXXXXXcnt-lst li img:hover { -webkit-box-shadow: 0px 0px 7px rgba(255,255,255,0.9); box-shadow: 0px 0px 7px rgba(255,255,255,0.9); }
+            
+            /*  DIVs  http://alistapart.com/article/practicalcss    */
+            .cnt-lst {  XXbackground: green;  XXXfloat: right;   XXwidth: 100%;  XXmargin: 0 auto 0 0;  overflow: auto;} 
+            .cnt-lst div.fmat { float: left; padding-left: 50px;  margin: 10px; border: 0px solid #0ff; XXXbackground: green; width:250px; XXheight: 200px;}
+            .cnt-lst div.fmat p { text-align: center;}
+            .cnt-lst div.fmat img { display: block; margin: 0px auto; XXXwidth:240px; XXheight:200px; 
+                                    width: 100%; height: auto;
+                                  }
+</style>
+                      
+               
+ <div class="cnt-lst">
+                    <div class="fmat"><img src="img/tst.jpg" alt="image 1" /><br/>  <p>caption 6</p> </div>
+                    <div class="fmat"><img src="img/tst.jpg" alt="image 1" /><br/>  <p>caption 1</p> </div>
+                    <div class="fmat"><img src="/shared/img/tst.jpg" alt="image 1" /><br/>  <p>caption 1</p> </div>
+                    <div class="fmat"><img src="img/tst.jpg" alt="image 1" /><br/>  <p>caption 1</p> </div>
+                    <div class="fmat"><img src="img/tst.jpg" alt="image 1" /><br/>  <p>caption 1</p> </div>
+                    <div class="fmat"><img src="/shared/img/tst.jpg" alt="image 1" /><br/>  <p>caption 1</p> </div>
+                    <div class="fmat"><img src="img/tst.jpg" alt="image 1" /><br/>  <p>caption 1</p> </div>
+                    <div class="fmat"><img src="img/tst.jpg" alt="image 1" /><br/>  <p>caption 1</p> </div>
+                    <div class="fmat"><img src="/shared/img/tst.jpg" alt="image 1" /><br/>  <p>caption 1</p> </div>
+                <br/>       
+</div>
+       
+
+</%block>

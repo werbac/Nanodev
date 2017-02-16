@@ -1,0 +1,351 @@
+
+
+//need to put this somwhere.... just temp here
+.row-eq-height { display: -webkit-box;
+                 display: -webkit-flex;
+                 display: -ms-flexbox;
+                 display: flex;
+               }
+
+
+$cmap: ( sea : #1abc9c,
+         red : #e74c3c,
+         aqua : #27d7e7,
+         blue : #3498db,
+         grey : #95a5a6,
+         dark : #555,
+         dark1 : #444,   //bg = #222
+         darker : #444,  //bg darker: #222 
+         green : #72c02c, 
+         brown : #9c8061,
+         light : #ffffff,   //bg = #f7f7f7 
+         orange : #e67e22,
+         yellow : #f1c40f,
+         green1 : #2ecc71, 
+         purple : #9b6bcc,
+         inherit : inherit,
+         dark-blue : #4765a0,
+         light-grey : #585f69,
+         light-green : #79d5b3,
+         teal : #18ba9b,
+         white : #fff  // bg = color: #555; 
+      );
+
+
+
+
+$bgmap: ( sea : #16a085,
+         red : #c0392b,
+         aqua : #26bac8,
+         blue : #2980b9,
+         grey : #7f8c8d,
+         dark : #333,
+         dark1 : #444,   //default to color  //bg = #222
+         darker : #444,  //default to color
+         green : #72c02c, //default to color
+         brown : #81674b,
+         light : #ffffff,  //default to color //bg = #f7f7f7 
+         orange : #d35400,
+         yellow : #f39c12,
+         green1 : #27ae60, 
+         purple : #814fb5,
+         inherit : inherit,
+         dark-blue : #324c80,
+         light-grey : #484f58,
+         light-green : #59b795, 
+         teal : #18ba9b,   //default to color
+         white : #fff  //default to color // bg = color: #555; 
+       );
+
+
+
+
+@import "app/_base.scss";
+@import "app/_layout.scss";
+@import "app/_mixins.scss";
+@import "app/_normalize.scss";
+@import "app/_variables.scss";
+@import "app/_forms.scss";
+@import "app/_buttons.scss";
+@import "app/_custom-sky-forms.scss";
+@import "app/_blocks.scss";
+
+
+
+
+//Text Colors
+@each $k, $v in $cmap { .color-#{$k} { color : $v; } }
+
+
+//Background Colors
+$bgmap2: ( dark: #555 , darker: #222, light: #f7f7f7, Nada : #666 ) ;   
+@each $k, $v in $cmap 
+  {  $ttx: 0;
+     @if map-has-key($bgmap2, $k) 
+         { $ttx: map-get($bgmap2, $k); }
+     @else { $ttx: map-get($cmap, $k); }
+      .bg-color-#{$k} {  color: #fff; background-color: $ttx  !important;  } 
+
+  } 
+.bg-color-white { color: #555; }
+
+
+//RGB Colors
+.rgba-red { background-color: rgba(231,76,60,0.8)}
+.rgba-blue { background-color: rgba(52,152,219,0.8);}
+.rgba-aqua { background-color: rgba(39,215,231,0.8);}
+.rgba-yellow { background-color: rgba(241,196,15,0.8);}
+.rgba-default { background-color: rgba(114,192,44,0.8);}
+.rgba-purple { background-color: rgba(155,107,204,0.8);}
+
+//Grey Backroud
+.bg-grey { background: #f7f7f7; border-top: solid 1px #eee; border-bottom: solid 1px #eee; }
+
+
+
+//Thematic Break
+hr {margin: 30px 0;}
+hr.hr-xs {margin: 10px 0;}
+hr.hr-md {margin: 20px 0;}
+hr.hr-lg {margin: 40px 0;}
+//Headings
+h1 {font-size: 28px; line-height: 35px; }
+h2 {font-size: 24px;line-height: 33px;}
+h3 {font-size: 20px;line-height: 27px;}
+h4 {line-height: 25px;}
+h5 {line-height: 20px;}
+h6 {line-height: 18px;}
+.font-open-sans {font-family: "Open Sans", Arial, sans-serif;}
+h1, h2, h3, h4, h5, h6 {color: #555;margin-top: 5px;text-shadow: none;font-weight: normal; font-family: "Open Sans", Arial, sans-serif;}
+h1 i, h2 i, h3 i, h4 i, h5 i, h6 i {margin-right: 5px;}
+
+//Forms
+//.form-control { box-shadow: none; border-radius: 0;  &:focus { border-color: #bbb;box-shadow: 0 0 2px #c9c9c9; } }
+//.input-group-addon { border-radius: 0; color: #b3b3b3; font-size: 14px; background: #fff; }
+// .form-spacing .form-control { margin-bottom: 15px; }
+
+
+
+//  ----------------------------- Crap to get page working -----------------------------
+.reg-page {	color: #555; padding: 30px; background: #fefefe; border: solid 1px #eee; box-shadow: 0 0 3px #eee;}
+.reg-header { color: #555; text-align: center; margin-bottom: 35px; border-bottom: solid 1px #eee; }
+.reg-header h2 { font-size: 24px; margin-bottom: 15px; }
+.reg-page label { color: #777; }
+
+//* { border-radius: 0; }
+
+//form { display: block; margin-top: 0em; }
+
+//.login-block-V1 .btn { padding: 12px 20px; font-size: 13px; }
+//.login-block-V1 .btn .fa { position: relative; top: 2px; font-size: 18px; margin-right: 10px; }
+//.login-block-V1 .bottom p { text-transform: uppercase; }
+//.login-block-V1 .bottom .btn-u { width: 190px; text-align: center; line-height: 38px; }
+//.login-block-V1 .bottom .btn-u:hover { color: #fff; }
+
+
+.list-inline>li { display: inline-block; padding-right: 5px; padding-left: 5px; }
+.list-inline { margin-left: -5px; }
+.pull-right { float: right; }
+
+
+.text-center { text-align: center;}
+
+
+
+//Rounded and Circle Classes
+.no-rounded { border-radius: 0 !important;}
+.rounded { border-radius: 4px !important;}
+.rounded-x { border-radius: 50% !important;}
+.rounded-2x { border-radius: 10px !important;}
+.rounded-3x { border-radius: 15px !important;}
+.rounded-4x { border-radius: 20px !important;}
+.rounded-sm { border-radius: 2px !important;}
+.rounded-md { border-radius: 3px !important;}
+.rounded-top { border-radius: 4px 4px 0 0 !important;}
+.rounded-left { border-radius: 4px 0 0 4px !important;}
+.rounded-right { border-radius: 0 4px 4px 0 !important;}
+.rounded-bottom { border-radius: 0 0 4px 4px !important;}
+
+
+
+//Icons - Social Icons
+.social-icons { margin: 0; padding: 0; }
+.social-icons li { list-style: none; margin-right: 3px; margin-bottom: 5px; text-indent: -9999px; display: inline-block; }
+.social-icons li a, a.social-icon { width: 28px; height: 28px; display: block; background-position: 0 0; 
+                                    background-repeat: no-repeat; transition: all 0.3s ease-in-out; 
+                                  }
+.social-icons li:hover a { background-position: 0 -38px; }
+.social-icons-color li a { opacity: 0.7; background-position: 0 -38px !important; -webkit-backface-visibility: hidden; }  //For Chrome
+.social-icons-color li a:hover { opacity: 1; }
+
+.social_amazon {background: url(../img/icons/social/amazon.png) no-repeat;}
+.social_behance {background: url(../img/icons/social/behance.png) no-repeat;}
+.social_blogger {background: url(../img/icons/social/blogger.png) no-repeat;}
+.social_deviantart {background: url(../img/icons/social/deviantart.png) no-repeat;}
+.social_dribbble {background: url(../img/icons/social/dribbble.png) no-repeat;}
+.social_dropbox {background: url(../img/icons/social/dropbox.png) no-repeat;}
+.social_evernote {background: url(../img/icons/social/evernote.png) no-repeat;}
+.social_facebook {background: url(../img/icons/social/facebook.png) no-repeat;}
+.social_forrst {background: url(../img/icons/social/forrst.png) no-repeat;}
+.social_github {background: url(../img/icons/social/github.png) no-repeat;}
+.social_googleplus {background: url(../img/icons/social/googleplus.png) no-repeat;}
+.social_jolicloud {background: url(../img/icons/social/jolicloud.png) no-repeat;}
+.social_last-fm {background: url(../img/icons/social/last-fm.png) no-repeat;}
+.social_linkedin {background: url(../img/icons/social/linkedin.png) no-repeat;}
+.social_picasa {background: url(../img/icons/social/picasa.png) no-repeat;}
+.social_pintrest {background: url(../img/icons/social/pintrest.png) no-repeat;}
+.social_rss {background: url(../img/icons/social/rss.png) no-repeat;}
+.social_skype {background: url(../img/icons/social/skype.png) no-repeat;}
+.social_spotify {background: url(../img/icons/social/spotify.png) no-repeat;}
+.social_stumbleupon {background: url(../img/icons/social/stumbleupon.png) no-repeat;}
+.social_tumblr {background: url(../img/icons/social/tumblr.png) no-repeat;}
+.social_twitter {background: url(../img/icons/social/twitter.png) no-repeat;}
+.social_vimeo {background: url(../img/icons/social/vimeo.png) no-repeat;}
+.social_wordpress {background: url(../img/icons/social/wordpress.png) no-repeat;}
+.social_xing {background: url(../img/icons/social/xing.png) no-repeat;}
+.social_yahoo {background: url(../img/icons/social/yahoo.png) no-repeat;}
+.social_youtube {background: url(../img/icons/social/youtube.png) no-repeat;}
+.social_vk {background: url(../img/icons/social/vk.png) no-repeat;}
+.social_instagram {background: url(../img/icons/social/instagram.png) no-repeat;}
+
+
+// -----------------------------------------------------------------------
+// -------------- To Figure Out   ----------------------------------------
+// -----------------------------------------------------------------------
+
+   
+/*
+.rounded-right { border-radius: 0 4px 4px 0 !important; }
+
+.contentwrapper .fa {font-size: 1.35em;}    
+
+.list-inline {
+    XXpadding-left: -10px;
+    margin-left: -5px;
+    list-style: none;
+}
+
+    
+.list-inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+p, li, li a, label {
+    color: #555;
+}
+    
+.checkbox label, .radio label {
+    min-height: 20px;
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+    
+a, a:focus, a:hover, a:active, button, button:hover {
+    outline: 0 !important;
+    color: #3498db;
+}
+    
+    
+.col-md-12  {padding-right: 15px; padding-left: 15px;
+             float: left;
+        width: 100%;
+            }
+    
+    .form-block {}
+.btn-u, .form-block .btn {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-transform: uppercase;
+}
+    
+.btn-u.btn-u-blue {
+    background: #3498db;
+}
+.btn-u.btn-block {
+    text-align: center;
+}
+.btn-u {
+    background: #3498db;
+}
+    
+.rounded {
+    border-radius: 4px !important;
+}
+.btn-u {
+    border: 0;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 400;
+    padding: 6px 13px;
+    position: relative;
+    background: #72c02c;
+    white-space: nowrap;
+    display: inline-block;
+    text-decoration: none;
+}
+a, a:focus, a:hover, a:active, button, button:hover {
+    outline: 0 !important;
+}
+
+.btn-u:hover, .btn-u:focus, .btn-u:active, .btn-u.active, .open .dropdown-toggle.btn-u {
+    background: #2980b9;
+    color: #fff;
+}
+    
+    .login-block {}
+.social-login {
+    color: rgba(0,0,0,.5);
+    padding-top: 45px;
+    border-top: 1px solid #eee;
+    position: relative;
+}
+    
+    .login-block {}
+.XXXXXXor {
+    position: absolute;
+    border: 1px solid #eee;
+    width: 60px;
+    height: 60px;
+    top: -35px;
+    left: 52%;
+    margin-left: -35px;
+    text-transform: uppercase;
+    background: #fff;
+    line-height: 60px;
+    padding: 0 20px;
+}
+.or {
+    position: absolute;
+    border: 1px solid #eee;
+    // width: 60px; height: 60px; 
+    top: -18px;
+    left: 55%;
+    margin-left: -35px;
+    text-transform: uppercase;
+    background: #fff;
+    line-height: 20px;
+    padding: 7px;
+}
+    
+    .login-block {}
+    .social-login {
+    color: rgba(0,0,0,.5);
+    padding-top: 45px;
+    border-top: 1px solid #eee;
+    position: relative;
+}
+    
+.rounded-x {border-radius: 50% !important;}
+    
+    
+    
+
+*/
+
+
+

@@ -1,0 +1,133 @@
+
+/*
+$colorMap: ( color-sea : #1abc9c,
+             color-red : #e74c3c,
+             color-aqua : #27d7e7,
+             color-blue : #3498db,
+             color-grey : #95a5a6,
+             color-dark : #555,
+             color-dark1 : #444,   //bg = #222
+             color-darker : #444,
+             color-green : #72c02c, 
+             color-brown : #9c8061,
+             color-light : #ffffff,   //bg = #f7f7f7 
+             color-orange : #e67e22,
+             color-yellow : #f1c40f,
+             color-green1 : #2ecc71, 
+             color-purple : #9b6bcc,
+             color-inherit : inherit,
+             color-dark-blue : #4765a0,
+             color-light-grey : #585f69,
+             color-light-green : #79d5b3,
+             color-teal : #18ba9b,
+             color-white : #fff  // bg = color: #555; 
+           );
+*/
+$colorMap: ( sea : #1abc9c,
+             red : #e74c3c,
+             aqua : #27d7e7,
+             blue : #3498db,
+             grey : #95a5a6,
+             dark : #555,
+             dark1 : #444,   //bg = #222
+             darker : #444,
+             green : #72c02c, 
+             brown : #9c8061,
+             light : #ffffff,   //bg = #f7f7f7 
+             orange : #e67e22,
+             yellow : #f1c40f,
+             green1 : #2ecc71, 
+             purple : #9b6bcc,
+             inherit : inherit,
+             dark-blue : #4765a0,
+             light-grey : #585f69,
+             light-green : #79d5b3,
+             teal : #18ba9b,
+             white : #fff  // bg = color: #555; 
+           );
+
+
+@each $k, $v in $colorMap { .color-#{$k} { color : $v; } }
+//Panels
+//@each $k, $v in $colorMap { .panel-#{$k} {border-color:$v;  &> .panel-heading { background: $v; }  } } 
+
+
+
+/*
+.bg-color-dark,
+.bg-color-darker,
+.bg-color-sea,
+.bg-color-red,
+.bg-color-aqua,
+.bg-color-blue,
+.bg-color-grey,
+.bg-color-light,
+.bg-color-green,
+.bg-color-brown,
+.bg-color-orange,
+.bg-color-green1,
+.bg-color-purple,
+.bg-color-dark-blue,
+.bg-color-light-grey,
+.bg-color-light-green,
+.bg-color-primary { color: #fff; }
+.bg-color-white { color: #555; }
+.bg-color-primary { background-color: #72c02c !important;}
+.bg-color-dark { background-color: #555 !important;}
+.bg-color-darker { background-color: #222 !important;}
+.bg-color-white { background-color: #fff !important;}
+.bg-color-sea { background-color: #1abc9c !important;}
+.bg-color-red { background-color: #e74c3c !important;}
+.bg-color-aqua { background-color: #27d7e7 !important;}
+.bg-color-blue { background-color: #3498db !important;}
+.bg-color-grey { background-color: #95a5a6 !important;}
+.bg-color-light { background-color: #f7f7f7 !important;}
+.bg-color-green { background-color: #72c02c !important;}
+.bg-color-brown { background-color: #9c8061 !important;}
+.bg-color-orange { background-color: #e67e22 !important;}
+.bg-color-green1 { background-color: #2ecc71 !important;}
+.bg-color-purple { background-color: #9b6bcc !important;}
+.bg-color-dark-blue { background-color: #4765a0 !important;}
+.bg-color-light-grey { background-color: #585f69 !important;}
+.bg-color-light-green { background-color: #79d5b3 !important;}
+.bg-color-teal { background-color: #18ba9b !important; }
+*/
+
+
+////@each $k, $v in $colorMap { .bg-#{$k} { color : #fff; } } 
+//@each $k, $v in $colorMap { .bg-#{$k} { color: #fff;; background-color : $v  !important; } } 
+//.bg-color-white { color: #555; }
+////@each $k, $v in $colorMap { .#{$k} { color : $v; } } 
+
+
+
+//@for $i from 1 through 20 { $x: $i * 5; .margin-bottom-#{$x} { clear: both;} }
+//@for $i from 1 through 20 { $x: $i * 5; .margin-bottom-#{$x} { margin-bottom:$x*1px; }  }
+//@media (max-width: 768px) {  @for $i from 1 through 20 { $x: $i * 5; .margin-bottom-#{$x} { margin-bottom:$x*1px; }  } }
+//@media (max-width: 992px) { @for $i from 1 through 20 { $x: $i * 5; .margin-bottom-#{$x} { margin-bottom:$x*1px; }  }  }
+
+//@each $profile, $bgcolor in $profiles {
+// .profile-link--#{$profile}:focus,
+// .profile-link--#{$profile}:hover {
+// background: $bgcolor;
+// }
+
+//@for $i from 1 through 10 { $x: $i*50; .height-#{$x} { min-height:$x*1px  !important; }  }
+
+
+
+/*ButtonsColors*/
+@each $name, $bg1, $bg2 in (blue, #3498db, #2980b9 ), (red, #e74c3c, #c0392b), (orange, #e67e22, #d35400),
+                            (sea, #1abc9c, #16a085), (green, #2ecc71 , #27ae60 ), (yellow, #f1c40f, #f39c12),
+                            (default, #95a5a6 , #7f8c8d), (purple, #9b6bcc, #814fb5), (aqua, #27d7e7, #26bac8 ),
+                            (brown, #9c8061, #81674b ), (dark-blue, #4765a0, #324c80), (light-green, #79d5b3, #59b795 ),
+                            (dark, #555 , #333), (light-grey, #585f69, #484f58)
+    {
+       // .btn-u.btn-u-#{$name} { background: $bg1; &:hover, &:focus, &:active, .active , .open .dropdown-toggle.btn-u.btn-u-#{$name} { background: $bg2; }  }
+       // .btn-u.btn-u-split-#{$name}.dropdown-toggle { border-left: solid 1px $bg2; }    
+    }
+
+    
+
+
+

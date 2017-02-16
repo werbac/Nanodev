@@ -1,0 +1,17 @@
+export SASS_SPEC_PATH=/var/NanoDev/lib/libsass/sass-spec
+export SASS_SASSC_PATH=/var/NanoDev/lib/sassc
+export SASS_LIBSASS_PATH=/var/NanoDev/lib/libsass/libsass
+export PATH=$PATH:/var/NanoDev/lib/:/var/NanoDev/lib/sassc/bin/
+
+
+while true
+do
+for f in `ls /var/NanoDev/sass/*.scss`
+do
+ #  o=`echo $f | sed 's/scss/css/g' | sed 's/sass/sass\/css/g'`
+  o=`echo $f | sed 's/scss/css/g' | sed 's/sass/shared\/css/g'  `
+ echo "Processing $f --- $o"
+ sass $f >  $o
+done
+sleep 5
+done

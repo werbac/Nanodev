@@ -1,0 +1,90 @@
+<%inherit file="shared/frames/f1.html"/>
+<%block name="header"> 
+    <%include file="/shared/headers/h1.html" args="lItems=some_other_variable, foo='moooo'" /> 
+</%block>     <!-- http://stackoverflow.com/questions/17531517/is-it-possible-to-pass-variable-arguments-to-the-include-tag-in-mako -->
+
+
+
+<%block name="banner"> 
+       <style> .bannerwrappper .container { background: url(img/test.png) center repeat-x;  background-size: auto 100%; height:100px; }
+       </style>  
+        MaBanna 
+</%block>  
+
+
+
+<%block name="content"> 
+    <%include file="content/search.html"/>
+</%block>
+
+
+
+<%block name="footer"> 
+    <%include file="/shared/footers/darkfooter.html"/>
+</%block>
+<%block name="copyright">
+    <%include file="/shared/footers/darkcopyright.html"/>
+</%block>
+<%block name="EOP_scripts">
+    <script>
+        var v_class_was = "at_top"
+        $( window ).scroll(function() {
+            var offsetfromTop=25;
+            var o = $( ".cnt-search").offset().top; 
+            var w = $( window ).scrollTop()+offsetfromTop
+            //w > o ? $(".search-wrapper").addClass("wrapped-fixed") : $(".search-wrapper").removeClass("wrapped-fixed");
+            
+            var searchHeight = $(".search-wrapper").outerHeight(false)
+            var o2 = $(".footerwrapper").offset().top;
+            var w2 = $( window ).scrollTop()+offsetfromTop+searchHeight+13 //+50
+//            var footerHeight = $(".footerwrapper").outerHeight(false)
+//            var copyrightHeight = $(".copyright").outerHeight(false)
+//            var bottomHeight = footerHeight+copyrightHeight-o2
+//            var wh = $(window).height();
+//            var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
+            
+            
+//            var calc = $(".search-wrapper").position().top;  //footerHeight+copyrightHeight
+          
+            
+            //var v_class = ""
+            if (w > o)
+                { if (w2 > o2)  
+                       { v_class="at_botom" 
+                         if (v_class != v_class_was)
+                            {  $(".search-wrapper").removeClass("wrapped-fixed");
+                               $(".cnt-search").addClass("cnt-search-low")
+                               $(".cnt-search").css("bottom", "-320px");
+                               v_class_was = v_class;
+                             }
+                       }  
+                  else 
+                       {                    
+                         v_class="fixed" 
+                         if (v_class != v_class_was)
+                            { $(".cnt-search").removeClass("cnt-search-low")
+                              $(".search-wrapper").addClass("wrapped-fixed");
+                              $(".cnt-search").css("bottom", "");
+                              v_class_was = v_class;
+                            }
+                       }
+                }
+            else 
+                { v_class = "at_top"
+                  if (v_class != v_class_was)
+                    { $(".search-wrapper").removeClass("wrapped-fixed");
+                      $(".cnt-search").removeClass("wrapped-low")
+                      $(".cnt-search").css("bottom", "");
+                      v_class_was = v_class;
+                    }
+                }
+            
+        });
+    </script> 
+</%block> 
+
+
+
+
+
+

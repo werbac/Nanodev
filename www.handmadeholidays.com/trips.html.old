@@ -1,0 +1,354 @@
+<%inherit file="shared/frames/f1.html"/>
+<%block name="header"> 
+    <%include file="/shared/headers/h1.html" args="lItems=some_other_variable, foo='moooo'" /> 
+</%block>     <!-- http://stackoverflow.com/questions/17531517/is-it-possible-to-pass-variable-arguments-to-the-include-tag-in-mako -->
+
+
+
+<%block name="banner"> 
+       <style> .bannerwrappper .container { background: url(img/test.png) center repeat-x;  background-size: auto 100%; height:100px; }
+       </style>  
+        <div class="MaBanna">  MaBanna </div> 
+</%block>  
+
+
+
+<%block name="content"> 
+    <%include file="content/search.html"/>
+</%block>
+
+
+
+
+
+
+
+
+
+
+
+
+<%block name="footer"> 
+    <%include file="/shared/footers/darkfooter.html"/>
+</%block>
+<%block name="copyright">
+    <%include file="/shared/footers/darkcopyright.html"/>
+</%block>
+<%block name="EOP_scripts">
+    <script>  
+        var v_class_was = "at_top"
+        $( window ).scroll(function() {
+            var offsetfromTop=25;
+            var StaticWrapperDiv = $(".contentwrapper");   // Just Need some outer/container div that doesn't change position with fixed menu 
+            var o =   StaticWrapperDiv.offset().top;  //$(".cnt-search").offset().top; 
+            var w = $(window).scrollTop()+offsetfromTop    
+            var searchHeight = $(".search-wrapper").outerHeight(false)
+            var o2 = StaticWrapperDiv.offset().top+StaticWrapperDiv.outerHeight(false);  //$(".footerwrapper").offset().top;
+            var w2 = $(window).scrollTop()+offsetfromTop+searchHeight  ///+13 //+50 
+            if (w > o)
+                { if (w2 > o2)  
+                       { v_class="at_botom" 
+                         if (v_class != v_class_was)
+                            { $(".search-wrapper").css({"position":"absolute","bottom":"0px","top":""});
+                              modal.atbotom();
+                              v_class_was = v_class;
+                            }
+                       }  
+                  else 
+                       {  v_class="fixed" 
+                          if (v_class != v_class_was)
+                             { $(".search-wrapper").css({"position":"fixed","bottom":"","top":"25px"});
+                               modal.atfixed();
+                               v_class_was = v_class;
+                             }
+                       }
+                }
+            else 
+                { v_class = "at_top"
+                  if (v_class != v_class_was)
+                    { $(".search-wrapper").css({"position":"absolute","bottom":"","top":"0px"});
+                      modal.attop();
+                      v_class_was = v_class;
+                    }
+                }
+        });
+        
+    
+var msg = function(txt) { var nd = Date();  $(".MaBanna").html("<p style='color:black'>"+txt+"~~~"+nd+"</p>"); 
+                          $(".posts").html("<p style='color:white'>"+txt+"~~~"+nd+"</p>");
+                        };
+        
+        
+        
+        //http://www.jacklmoore.com/notes/jquery-modal-tutorial/
+var modal = (function(){ var method = {}, $overlay, $modal, $timer, $pos;
+         method.getLeft = function () 
+                 { return left = $("a[wb-target='"+$modal+"']").position().left+$("a[wb-target='"+$modal+"']").outerWidth(false) + $(window).scrollLeft() + 3; }
+         method.getTop = function () { return $("a[wb-target='"+$modal+"']").position().top + parseInt($($modal).attr("wb-offset-top"));   }
+         method.center = function () 
+                { $($modal).css({ top:method.getTop(), left:method.getLeft() }); };
+          method.open = function (modal) 
+                { if ($modal != undefined && $modal != modal ) { method.close(); }
+                  else { method.clearT(); }
+                  $modal = modal;  
+                  method.center();
+                  $(window).bind('resize.modal', method.center);
+                  $($modal).show();
+                  $("a[wb-target='"+$modal+"']").css({background:"#F9F9F9" });
+                  //$($modal).fadeIn(50);
+                  //msg($modal+"....... "+method.getTop() );
+                };
+          method.close = function () 
+               { $($modal).hide();
+                 $("a[wb-target='"+$modal+"']").css({background:"#FFF" });
+                 $(window).unbind('resize.modal');
+                 $modal=undefined;
+                 window.clearTimeout($timer);
+               };
+                        
+            method.fade = function (speed) 
+               { $($modal).fadeOut(100);
+                 $("a[wb-target='"+$modal+"']").css({background:"#FFF"});
+                 $(window).unbind('resize.modal');
+                 $modal=undefined;
+                 window.clearTimeout($timer);
+               };
+                        
+           //method.atfixed = function () { if ($active) $($modal).css({"position":"fixed","bottom":"","top":"25px","left":method.getLeft() }); }
+           //method.atbotom = function () { if ($active) $($modal).css({"position":"absolute","bottom":"0px","top":"","left":method.getLeft()});}
+           //method.attop = function () { if ($active) $($modal).css({"position":"absolute","bottom":"","top":"0px","left":method.getLeft()});}
+           method.atfixed = function () { $pos="atfixed"; }
+           method.atbotom = function () { $pos="atbottom";}
+           method.attop = function () {   $pos="attop";}           
+           method.clearT = function () { window.clearTimeout($timer);  }
+           method.setT = function () { $timer = window.setTimeout(method.fade, 500);} 
+           return method;
+  }());
+                                                 
+                                                           
+                                                           
+$(document).ready(function()
+         {  $("a[wb-target]").each( function()  
+                    { var t=$(this).attr("wb-target");
+                      $(this).click(function(e){ e.preventDefault(); e.stopPropagation(); });  //modal.open($(this), $(t));
+                      $(this).mouseover(function(e) {  modal.open(t); e.preventDefault(); e.stopPropagation();   modal.clearT(); } );
+                      $(this).mouseleave(function(e) { modal.setT(); } );
+                      $(t).mouseover(function(e) { modal.clearT(); } );
+                      $(t).mouseleave(function(e) { modal.setT(); } );
+                    }    
+                  );
+            $('html').click(function() {  modal.close();   });
+                                     
+         });        
+
+        
+    </script> 
+</%block> 
+
+
+
+
+<!--
+
+      var v_class_was = "at_top"
+        $( window ).scroll(function() {
+            var offsetfromTop=25;
+            var o = $(".cnt-search").offset().top; 
+            //var o = $( ".search-wrapper").offset().top; 
+            var w = $( window ).scrollTop()+offsetfromTop
+            //w > o ? $(".search-wrapper").addClass("wrapped-fixed") : $(".search-wrapper").removeClass("wrapped-fixed");     
+            var searchHeight = $(".search-wrapper").outerHeight(false)
+            var o2 = $(".footerwrapper").offset().top;
+            var w2 = $( window ).scrollTop()+offsetfromTop+searchHeight+13 //+50
+//            var footerHeight = $(".footerwrapper").outerHeight(false)
+//            var copyrightHeight = $(".copyright").outerHeight(false)
+//            var bottomHeight = footerHeight+copyrightHeight-o2
+//            var wh = $(window).height();
+//            var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
+                                           
+            
+            if (w > o)
+                { if (w2 > o2)  
+                       { v_class="at_botom" 
+                         if (v_class != v_class_was)
+                            { //$(".search-wrapper").removeClass("atfixed");
+                              //$(".search-wrapper").addClass("atbotom");
+                              //$(".search-wrapper").removeClass("attop");
+                              
+                             //$(".search-wrapper").css({position:absolute,bottom:"0px",top:""});
+                             $(".search-wrapper").css({"position":"absolute","bottom":"0px","top":""});
+                             modal.atbotom();
+                              v_class_was = v_class;
+                            }
+                       }  
+                  else 
+                       {  v_class="fixed" 
+                          if (v_class != v_class_was)
+                             { //$(".search-wrapper").addClass("atfixed");
+                               //$(".search-wrapper").removeClass("atbotom");
+                               //$(".search-wrapper").removeClass("attop");
+                                 
+                               //$(".search-wrapper").css({position:fixed,top:"25px",bottom:""});
+                               $(".search-wrapper").css({"position":"fixed","bottom":"","top":"25px"});
+                               modal.atfixed();
+                               v_class_was = v_class;
+                             }
+                       }
+                }
+            else 
+                { v_class = "at_top"
+                  if (v_class != v_class_was)
+                    { //$(".search-wrapper").removeClass("atfixed");
+                      //$(".search-wrapper").removeClass("atbotom");
+                      //$(".search-wrapper").addClass("attop");
+                        
+                      //$(".search-wrapper").css({position:absolute,bottom:"",top:"0px"});
+                      $(".search-wrapper").css({"position":"absolute","bottom":"","top":"0px"});
+                      modal.attop();
+                      v_class_was = v_class;
+                    }
+                }
+            //$(".posts").html("<p style='color:white'>"+v_class+"~~~"+"</p>");   
+        });
+
+        
+                
+ /* -------------------------------------------------------------------------------------------------------------------------------------------- */
+/*        
+        var modal = (function(){ var method = {}, $overlay, $modal, $content, $close;
+                                 method.center = function () { var top, left;
+                                                               top = Math.max($(window).height() - $modal.outerHeight(), 0) / 2;
+                                                               left = Math.max($(window).width() - $modal.outerWidth(), 0) / 2;
+                                                               $modal.css({ top:top + $(window).scrollTop(), left:left + $(window).scrollLeft() });
+				                                             };
+                                 method.open = function (settings) { $content.empty().append(settings.content);
+                                                                     $modal.css({ width: settings.width || 'auto',  height: settings.height || 'auto'});
+                                                                     method.center();
+                                                                     $(window).bind('resize.modal', method.center); 
+                                                                     $modal.show(); 
+                                                                     $overlay.show();
+                                                                   };
+                                 method.close = function () { $modal.hide();
+                                                              $overlay.hide();
+                                                              $content.empty();
+                                                              $(window).unbind('resize.modal');
+                                                            };
+                                 $overlay = $('<div id="overlay"></div>');
+                                 $modal = $('<div id="modal"></div>');
+                                 $content = $('<div id="content"></div>');
+                                 $close = $('<a id="close" href="#">close</a>');
+                                 $modal.hide();
+                                 $overlay.hide();
+                                 $modal.append($content, $close);
+                                 $(document).ready(function(){ $('body').append($overlay, $modal); });
+                                 $close.click(function(e){ e.preventDefault(); method.close(); });
+                                 return method;
+                               }());
+        
+         $(document).ready(function(){ //$.get('ajax.html', function(data){ modal.open({content: data}); });
+                                       //$('a#destinations').click(function(e){ modal.open({content: "Hows it going?"}); e.preventDefault();  });
+                                       $("#overlay").click(function(e){ modal.close();  });
+                                       $("a[wb-toggle='modal']").each(function()  { var t=$(this).attr("wb-target");
+                                                                                    $(this).click(function(e){ modal.open({content: "Hows it going? : "+t}); e.preventDefault();  });
+                                                                                    //alert(t);
+                                                                                  }    
+                                                                        );
+             
+                                        //wb-toggle="modal" wb-target=".destinations"
+                                        
+                                     });
+*/
+
+        
+        var msg = function(txt) { var nd = Date();  $(".MaBanna").html("<p style='color:black'>"+txt+"~~~"+nd+"</p>"); 
+                                   $(".posts").html("<p style='color:white'>"+txt+"~~~"+nd+"</p>");
+                                };//{ var now = new Date(); now.format("dd/MM/yyyy hh:mm TT"); 
+        
+        
+        
+        //http://www.jacklmoore.com/notes/jquery-modal-tutorial/
+        var modal = (function(){ var method = {}, $overlay, $modal, $timer, $tpos, $active, $left;
+                                 
+                                 method.getLeft = function () { var left;
+                                                                pad = parseInt($(".anchor-menu .nav").css('padding-right')); //parseInt($(".nav").css('padding-right')) 
+                                                                left=$(".cnt-search").outerWidth(false) - pad  ; 
+                                                                //msg("left : "+left)
+                                                                //if ( $(".search-wrapper").css('position') == 'fixed' )
+                                                                //    { left = left + $(".search-wrapper").position().left
+                                                                //    }
+                                                               return $(".search-wrapper").css('position') == 'fixed' ? left+$(".search-wrapper").position().left : left;
+                                                              }
+                                 method.getTop = function () { var top;
+                                                             }
+                                 method.center = function () { var top, left;
+                                                               top = Math.max($(window).height() - $modal.outerHeight(), 0) / 2;
+                                                               left = Math.max($(window).width() - $modal.outerWidth(), 0) / 2;
+                                                    pad = parseInt($(".anchor-menu .nav").css('padding-right')) //parseInt($(".nav").css('padding-right')) 
+                                                    left=$(".cnt-search").outerWidth(false) - pad  ; 
+                                                    $left = left
+                                                    top=$(".nav").position().top;
+                                                    top = $tpos
+                                                               $modal.css({ top:top + $(window).scrollTop(), left:left + $(window).scrollLeft() });
+                                                              //$modal.css({ top:top+ $(window).scrollTop(), left:left });
+				                                             };
+                                 method.open = function (modal, tpos) { //$content.empty().append(settings.content);
+                                                                           //$modal.css({ width: settings.width || 'auto',  height: settings.height || 'auto'});
+                                                                           $tpos = tpos;
+                                                                           if ($modal != undefined) { method.close(); }
+                                                                           $modal = modal;  
+                                                                           method.center();
+                                                                           $(window).bind('resize.modal', method.center);
+                                                                           $modal.show();
+                                                                           $active = true;
+                                                                   };
+                                 method.close = function () { $modal.hide();
+                                                              $(window).unbind('resize.modal');
+                                                              $modal=undefined;
+                                                              window.clearTimeout($timer);
+                                                              $active = false;
+                                                            };
+                                                          
+                                method.atfixed = function () { if ($active) $modal.css({"position":"fixed","bottom":"","top":"25px","left":method.getLeft() }); }
+                                method.atbotom = function () { if ($active) $modal.css({"position":"absolute","bottom":"0px","top":"","left":$left});}
+                                method.attop = function () { if ($active) $modal.css({"position":"absolute","bottom":"","top":"0px","left":$left});}
+                                
+                                method.clearT = function () { window.clearTimeout($timer);  }
+                                method.setT = function () { $timer = window.setTimeout(method.close, 700);} 
+                                return method;
+                    }());
+                                                 
+                                                           
+                                                           
+         $(document).ready(function(){ $("a[wb-toggle='modal']").each(function()  { var t=$(this).attr("wb-target");
+                                                                                    $(this).click(function(e){ modal.open($(t), $(this).position().top); e.preventDefault(); e.stopPropagation(); });
+                                                                                    $(t).mouseover(function(e) { modal.clearT(); } );
+                                                                                    $(t).mouseleave(function(e) { modal.setT(); } );
+                                                                                  }    
+                                                                        );
+                                       $('html').click(function() {  modal.close();   });
+                                     });        
+        
+        
+       // var timer;
+
+//$(".parent").on("mouseover", function() { clearTimeout(timer); openSubmenu();}).on("mouseleave", function() { timer = setTimeout( closeSubmenu , 1000); });
+
+//function openSubmenu() { $(".submenu").addClass("open"); }
+//function closeSubmenu() { $(".submenu").removeClass("open"); }
+     
+/*        
+$('html').click(function() {
+  //Hide the menus if visible
+});
+
+$('#menucontainer').click(function(event){
+    event.stopPropagation();
+});
+*/         
+        
+        
+        
+-->
+
+
+

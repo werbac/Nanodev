@@ -1,0 +1,41 @@
+
+<style>
+    .col1 {background: red; float:left; Xheight: 100%; }
+    .col2 {background: green; Xmin-height:615px; float:right;}
+    .col2 {XXbackground: blue; Xmin-height:615px; Xfloat:left; padding-left: 0px; padding-right: 0px;}
+</style>
+<%block name="ZZZxcol"/>
+
+
+<style>
+    .col-xs-4  {background: grey;}
+</style>
+<div class="row row-eq-height">
+        <div class="col-xs-4">.row.row-eq-height &gt; .col-xs-4</div>
+        <div class="col-xs-4">.row.row-eq-height &gt; .col-xs-4<br>this is<br>a much<br>taller<br>column<br>than the others</div>
+        <div class="col-xs-4">.row.row-eq-height &gt; .col-xs-4</div>
+</div>
+      
+
+
+
+<div class="row" style="background:orange;">
+<!--    <div class="col-sm-3 .col-md-3 .col-lg-3 col1">
+        <%block name="col1"/>
+    </div>
+-->
+  
+   <div class="col-sm-3 col-md-3 col-lg-3 col1">
+       <style>
+           .d1 {background: blue; height: 50px; width: 50px; pXosition: absolute; top: 0px; }
+       </style>
+        <div class="d1">
+            
+        </div>
+    </div>
+    
+    <div class="col-sm-9 col-md-9 col-lg-9 col2 pull-right">
+        <%block name="col2"/>
+    </div>
+</div>
+  

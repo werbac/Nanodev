@@ -1,0 +1,100 @@
+
+
+// -----------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------
+// -------------  Buttons ------------------------------------------------------------
+// -----------------------------------------------------------------------------------
+
+//Button Styles
+.btn { box-shadow: none; border-radius: 0; }
+.btn-u { border: 0; color: #fff; font-size: 14px; cursor: pointer; font-weight: 400; padding: 6px 13px; 
+	     position: relative; background: #72c02c; white-space: nowrap; display: inline-block; text-decoration: none;
+         &:hover { color: #fff; text-decoration: none; transition: all 0.3s ease-in-out; }
+        .btn-block { text-align: center; }
+       }
+.btn-u-sm, a.btn-u-sm { padding: 3px 12px; }
+.btn-u-md, a.btn-u-md { padding: 10px 20px; }
+.btn-u-lg, a.btn-u-lg { font-size: 18px; padding: 10px 25px; }
+.btn-u-xs, a.btn-u-xs { font-size: 12px; padding: 2px 12px; line-height: 18px; }
+//Button Groups
+.btn-group { .dropdown-menu > li > a { padding: 3px 13px; } > .btn-u:first-child { margin-left: 0; }  }
+.btn-group > .btn-u, .btn-group-vertical > .btn-u { float: left; position: relative; }
+//For FF Only
+@-moz-document url-prefix() {.footer-subscribe .btn-u {padding-bottom: 4px} }
+@media (max-width: 768px) { @-moz-document url-prefix() { .btn-u { padding-bottom: 6px; } } }
+//Buttons Color
+.btn-u { &:hover,&:focus,&:active,.active {background: #5fb611;} }
+.open .dropdown-toggle.btn-u {background: #5fb611;}
+.btn-u-split.dropdown-toggle {border-left: solid 1px #5fb611;}
+//ButtonsColors
+@each $name, $bg1, $bg2 in  (blue, #3498db, #2980b9), (red, #e74c3c, #c0392b), (orange, #e67e22, #d35400),
+                            (sea, #1abc9c, #16a085), (green, #72c02c , #72c02c ), (yellow, #f1c40f, #f39c12),   //(green, #2ecc71 , #27ae60 )
+                            (default, #95a5a6 , #7f8c8d), (purple, #9b6bcc, #814fb5), (aqua, #27d7e7, #26bac8 ),
+                            (brown, #9c8061, #81674b ), (dark-blue, #4765a0, #324c80), (light-green, #79d5b3, #59b795 ),
+                            (dark, #555 , #333), (light-grey, #585f69, #484f58)
+{
+.btn-u.btn-u-#{$name} { background: $bg1; &:hover, &:focus, &:active, .active , .open .dropdown-toggle.btn-u.btn-u-#{$name} { background: $bg2; }  }
+.btn-u.btn-u-split-#{$name}.dropdown-toggle { border-left: solid 1px $bg2; }    
+}
+
+//Bordered Buttons
+.btn-u { .btn-brd { color: #555; background: none; padding: 5px 13px; border: solid 1px transparent; border-color: #72c02c;
+                    &:hover { background: none; color: #5fb611; border-color: #5fb611;}
+                    &:focus { background: none; }
+                    .btn-brd-hover:hover { color: #fff !important;  background: #5fb611;   }    
+                    .btn-u-blue { border-color: #3498db; 
+                                  &:hover {color: #2980b9;border-color: #2980b9;}  .btn-brd-hover:hover {background: #2980b9;}
+                                }
+                    .btn-u-red { border-color: #e74c3c;
+                                 &:hover { color: #c0392b; border-color: #c0392b; }  .btn-brd-hover:hover { background: #c0392b;}
+                               }
+                    .btn-u-orange { border-color: #e67e22;
+                                    &:hover { color: #d35400; border-color: #d35400;} .btn-brd-hover:hover { background: #d35400;}
+                                  }
+                    .btn-u-sea { border-color: #1abc9c;
+                                 &:hover { color: #16a085; border-color: #16a085; }  .btn-brd-hover:hover { background: #16a085;}
+                               }
+                    .btn-u-green { //border-color: #2ecc71;
+                                   //&:hover {color: #27ae60;border-color: #27ae60;} .btn-brd-hover:hover {background: #27ae60;}
+                                   border-color: #72c02c;
+                                   &:hover {color: #72c02c;border-color: #72c02c;} .btn-brd-hover:hover {background: #27ae60;}
+                                 }    
+                    .btn-u-yellow { border-color: #f1c40f;
+                                    &:hover { color: #f39c12; border-color: #f39c12;} .btn-brd-hover:hover { background: #f39c12; }
+                                  }
+                    .btn-u-default { border-color: #95a5a6;
+                                     &:hover { color: #7f8c8d; border-color: #7f8c8d; } .btn-brd-hover:hover { background: #7f8c8d; }
+                                   }
+                    .btn-u-dark { border-color: #555;
+                                  &:hover { color: #333;border-color: #333;} .btn-brd-hover:hover { background: #333; }
+                                }
+                    .btn-u-light-grey { border-color: #585f69; 
+                                        &:hover {color: #484f58; border-color: #484f58; } .btn-brd-hover:hover { background: #484f58; }
+                                      }    
+                    .btn-u-purple { border-color: #9b6bcc;
+                                    &:hover { color: #814fb5; border-color: #814fb5; } .btn-brd-hover:hover { background: #814fb5; }
+                                  }
+                    .btn-u-aqua { border-color: #27d7e7;
+                                  &:hover { color: #26bac8; border-color: #26bac8; } .btn-brd-hover:hover { background: #26bac8; }
+                                }
+                    .btn-u-brown { border-color: #9c8061;
+                                   &:hover { color: #81674b; border-color: #81674b; } .btn-brd-hover:hover { background: #81674b; }
+                                 } 
+                    .btn-u-dark-blue { border-color: #4765a0;
+                                       &:hover { color: #324c80; border-color: #324c80; }  .btn-brd-hover:hover { background: #324c80; }
+                                     }
+                    .btn-u-light-green { border-color: #79d5b3;
+                                         &:hover { color: #59b795; border-color: #59b795; } .btn-brd-hover:hover { background: #59b795; }
+                                       }
+                    .btn-u-light { color: #fff; border-color: #fff;
+                                   &:hover {border-color: #fff; } .btn-brd-hover:hover { background: #fff; color: #555 !important;}
+                                 }
+    
+                  }
+         .btn-brd-width-2 {padding: 7px 18px;border-width: 2px;}
+    
+       }
+
+
+
+

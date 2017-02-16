@@ -1,0 +1,5 @@
+ln -s ../shared shared
+mkdir img
+mkdir css
+mkdir js
+

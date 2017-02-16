@@ -1,0 +1,101 @@
+//Sky-Forms
+/*Contact Style*/
+.sky-form {.contact-style { border: none; }
+           .comment-style {  padding: 0; border: none; background: inherit;
+                             fieldset { padding: 0; border: none; background: inherit; }
+                             input,  textarea { border: none; }  
+                             input:focus, textarea:focus { box-shadow: none; }
+                          }
+           .comment-style-v2 { padding: 0; border: none; background: inherit;
+                               fieldset { padding: 0; border: none; background: inherit; }
+                               input, textarea { border: none; }
+                               input:focus, textarea:focus { box-shadow: none; }
+                               .form-control { padding: 20px 15px; }
+                             }
+    
+           .sky-space-20 {margin-bottom: 20px;}
+           .sky-space-30 {margin-bottom: 30px;}
+           box-shadow: none;border: 1px solid #eee;
+           header { color: inherit;display: block;font-size: 20px;background: #fff;font-weight: 400;padding: 8px 30px;}
+           fieldset
+           fieldset { background: #fff;
+                      .no-padding { padding: 0;}
+                    }
+           footer { background: #fff;  padding: 15px 30px;}
+           a { color: inherit; 
+               .btn-u { color: #fff;}
+             }
+           .input input { height: 34px; padding: 6px 12px;}
+           .input input, .select select, .textarea textarea { border-width: 1px; font-size: 14px; color: #404040; }
+           .select select { height: 33px; padding: 6px 10px;}
+           .select-multiple select {  height: auto;}
+           .input-file .button {  height: 32px;  top: 1px;  right: 1px;}
+           .input-captcha img {  position: absolute;  top: 1px;  right: 1px;  border-left: 1px solid #e5e5e5;}
+           // Normal Statte
+           .input input, .select select, .textarea textarea, .radio i, .checkbox i, .toggle i, .icon-append, .icon-prepend {  border-color: #bbb;}
+           .toggle i:before { background-color: #999;  }
+           .button {  background: #72c02c;}
+           //toggles 
+           .toggle { font-weight: normal;}
+           .toggle i { width: 54px;  height: 21px;  border-width: 1px;}
+           .toggle i:after { top: 3px;}
+           .toggle i:before { top: 5px; right: 6px;}   
+           .radio, .checkbox {  margin-top: 0;}   //remove Bootstrap 'radio, checkbox' margin-top
+           //radios and checkboxes
+           .radio i, .checkbox i { width: 17px; height: 17px;  border-width: 1px;}
+           .checkbox input + i:after { top: 2px; left: 0; font: normal 10px FontAwesome;}
+           //checked state
+           .radio input + i:after { top: 5px; left: 5px; background-color: #999;  }
+           .checkbox input + i:after {  color: #999;}
+           .radio input:checked + i,
+           .checkbox input:checked + i,
+           .toggle input:checked + i { border-color: #999;  }
+           .rating input:checked ~ label {  color: #72c02c; }
+           .select i { top: 14px; width: 9px; right: 13px; height: 6px;}
+           .select i:after, .select i:before {  top: 4px;}
+           .select i:before { top: -2px; border-bottom: 4px solid #404040;}
+           .label-rounded .ui-slider-handle {  border-radius: 50% !important;}   
+           .icon-append, .icon-prepend {  top: 1px;  height: 32px;  font-size: 14px;  line-height: 33px;  background: inherit;}
+           .icon-append {  right: 1px;  padding: 0 3px;  min-width: 34px;}
+           .icon-prepend {  left: 6px;  padding-right: 5px;}  
+           //focus state
+           .input input:focus, .select select:focus, .textarea textarea:focus {border-color: #bbb;box-shadow: 0 0 2px #c9c9c9;	}
+           .radio input:focus + i, .checkbox input:focus + i, .toggle input:focus + i { border-color: #999; box-shadow: none;}
+           //hover state
+           .input:hover input,
+           .select:hover select,
+           .textarea:hover textarea {border-color: #999;}
+           .radio:hover i, .checkbox:hover i, .toggle:hover i, .ui-slider-handle:hover { border-color: #999;}
+           .rating input + label:hover, .rating input + label:hover ~ label { color: #72c02c;}
+           .icon-append, .icon-prepend {color: #b3b3b3;}
+           //disabled state/
+           .input.state-disabled:hover input,
+           .select.state-disabled:hover select,
+           .textarea.state-disabled:hover textarea,
+           .radio.state-disabled:hover i,
+           .checkbox.state-disabled:hover i,
+           .toggle.state-disabled:hover i { border-color: #bbb;}    
+   
+    
+          }
+
+       //datepicker
+       .ui-datepicker-header { padding: 10px 0; font-size: 16px;}
+       .ui-datepicker-inline {  border-width: 1px;}
+       .ui-datepicker-inline .ui-datepicker-header {  line-height: 27px;}
+       .ui-datepicker-prev, .ui-datepicker-next { font-size: 18px; line-height: 47px;}
+       .ui-datepicker-calendar a { border: 1px solid transparent;}
+       .ui-datepicker-calendar .ui-state-active { background: inherit; border: 1px solid #bbb;}
+       .ui-datepicker-calendar a:hover { background: inherit;   border: 1px solid #bbb;}
+       //bootstrap compatibility
+       button *, button *:after, button *:before { margin: 0 auto; padding: 0 auto;}
+       .btn-u.button-uploading:after { top: 6px;}
+       .btn-u.btn-u-lg.button-uploading:after { top: 10px;}
+       .btn-u.btn-u-sm.button-uploading:after {top: 3px;}
+       .btn-u.btn-u-xs.button-uploading:after {top: 2px;}
+       .label {padding: 0.2em 0 0.3em;}
+        /*Fix for datepicker's responsive issue on resolution 1024x768*/ /*.ui-datepicker-calendar a,*/
+       .ui-datepicker-calendar span {width: 26px; }  // color: #bfbfbf;
+
+
+
